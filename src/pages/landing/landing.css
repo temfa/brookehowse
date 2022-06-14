@@ -1,0 +1,144 @@
+.landing-header {
+	background-image: url(../../assets/Rectangle\ 30.png);
+	background-size: cover;
+	position: relative;
+	padding: 40px 0px;
+}
+
+.landing-header .overlay {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+.landing-cont {
+	position: relative;
+	z-index: 99999;
+}
+
+.welcome-container {
+	display: flex;
+	margin: 80px 0px;
+	/* align-items: center; */
+	width: 100%;
+	justify-content: space-between;
+}
+
+.welcome-text {
+	width: 53%;
+}
+
+.welcome-text h2 {
+	width: 100%;
+	font-size: 55px;
+	font-weight: 400;
+	color: white;
+	margin: 0px;
+	font-family: "Arsenica";
+}
+
+.welcome-text p {
+	color: white;
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 145%;
+	margin: 0px;
+	margin-top: 30px;
+}
+
+.welcome-text button {
+	margin-top: 42px;
+}
+
+.welcome-img {
+	width: 42%;
+}
+
+.welcome-img img {
+	width: 100%;
+}
+
+.offer {
+	background-color: #0b0728;
+	width: 100%;
+	padding: 150px 0px;
+}
+
+.offer-body {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+
+.offer-text {
+	width: 30%;
+}
+
+.offer-text p {
+	font-size: 20px;
+	font-weight: 300;
+	font-family: "Roboto", sans-serif;
+	line-height: 145%;
+	color: white;
+	margin-bottom: 5px;
+}
+
+.offer-text h2 {
+	font-size: 50px;
+	font-family: "Arsenica";
+	color: white;
+	font-weight: 400;
+}
+
+.offer-conts {
+	display: flex;
+	width: 70%;
+}
+
+.offer-single {
+	margin-left: 40px;
+	width: 20%;
+}
+
+.single-offer {
+	width: 100%;
+	background-color: #bc9144;
+	height: 207px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.offer-single h4 {
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	color: white;
+	margin-top: 30px;
+	line-height: 30px;
+}
+
+.consultation {
+	background-color: #0b0728;
+	padding: 150px 0px;
+}
+
+.consultation-body {
+	width: 65%;
+	margin: 0px auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.consultation-img {
+	width: 50%;
+}
+
+.consultation-form {
+	margin-left: 100px;
+}

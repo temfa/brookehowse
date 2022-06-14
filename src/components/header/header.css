@@ -1,0 +1,36 @@
+.header-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-nav {
+	display: flex;
+	justify-content: space-between;
+	width: 30%;
+}
+
+.header-nav a {
+	color: white;
+	font-size: 20px;
+	font-weight: 300;
+	font-family: "Roboto", sans-serif;
+	line-height: 23px;
+	text-decoration: none;
+	transition: 1s all ease;
+}
+
+.header-nav a:hover {
+	color: #bc9144;
+	transform: scale(1.2);
+}
+
+.header-nav .active {
+	font-weight: 900;
+}
+
+.active button {
+	border: 1px solid #bc9144;
+	background-color: black;
+}

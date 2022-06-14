@@ -1,0 +1,144 @@
+.about-container {
+	background-color: #000000;
+	opacity: 0.9;
+	padding: 40px 0px;
+}
+
+.about-header {
+	display: flex;
+	margin-top: 100px;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.about-header-text {
+	width: 50%;
+}
+
+.about-header-text h2 {
+	color: white;
+	font-size: 64px;
+	font-family: "Arsenica";
+	line-height: 113%;
+	font-weight: 400;
+}
+
+.about-header-text p {
+	color: white;
+	font-family: "Roboto", sans-serif;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 270%;
+	margin-top: 30px;
+}
+
+.about-header-img {
+	width: 45%;
+}
+.about-header-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.mission-img {
+	width: 45%;
+}
+
+.mission-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.mission-text {
+	width: 50%;
+}
+
+.mission-text h3 {
+	background-color: #bc9144;
+	color: white;
+	padding: 26px 58px;
+	display: inline-block;
+	margin-bottom: 40px;
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.mission-text p {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+	width: 90%;
+	color: #1e1e1e;
+	line-height: 151%;
+}
+
+.ceo-img {
+	width: 45%;
+}
+
+.ceo-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.ceo-text {
+	width: 50%;
+}
+
+.ceo-text h2 {
+	font-family: "Arsenica";
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 51px;
+	color: #1a1a1a;
+	margin-bottom: 20px;
+}
+
+.ceo-text h3 {
+	font-family: "Roboto", sans-serif;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 153%;
+	color: #7d7d7d;
+	margin-bottom: 8px;
+}
+
+.ceo-text p {
+	font-family: "Roboto", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 200%;
+	color: #1e1e1e;
+	margin-bottom: 20px;
+}
+
+.core-header {
+	font-family: "Arsenica";
+	font-size: 40px;
+	font-weight: 400;
+	color: #1a1a1a;
+}
+
+.core-values {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.core-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	margin-bottom: 150px;
+}
+
+.core-container .exact-core {
+	width: 70%;
+	margin: 0px auto;
+}

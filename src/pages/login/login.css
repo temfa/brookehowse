@@ -1,0 +1,31 @@
+.login-container {
+	background-color: #000000;
+	opacity: 0.9;
+	padding: 40px 0px;
+}
+
+.login-cont {
+	display: flex;
+	position: relative;
+	align-items: center;
+	margin-top: 100px;
+}
+
+.login-img {
+	width: 70%;
+}
+
+.login-img img {
+	width: 100%;
+}
+
+.login-group {
+	position: absolute;
+	right: 0px;
+	background-color: #bc9144;
+	padding: 68px 92px;
+}
+
+.login-group h2 {
+	width: 55%;
+}

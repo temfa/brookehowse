@@ -1,0 +1,86 @@
+.footer-container {
+	width: 100%;
+	padding: 100px 0px 0px;
+}
+
+.footer-newsletter {
+	width: 41%;
+	margin: auto;
+	text-align: center;
+}
+
+.footer-newsletter h2 {
+	color: #0b0728;
+	font-size: 40px;
+	line-height: 113%;
+	font-family: "Arsenica";
+	font-weight: 400;
+}
+
+.footer-newsletter p {
+	color: #7d7d7d;
+	font-size: 20px;
+	line-height: 113%;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	margin-top: 10px;
+}
+
+.newsletter-input {
+	width: 100%;
+	background: #ffffff;
+	border: 1px solid #dfdfdf;
+	box-shadow: 0px 95px 103px -21px rgba(0, 0, 0, 0.1);
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	margin-bottom: 150px;
+}
+
+.newsletter-input input {
+	width: 70%;
+	border: none;
+	outline: none;
+}
+
+.newsletter-input button {
+	box-shadow: 0px 30px 39px -8px rgba(255, 153, 0, 0.2);
+}
+
+.footer-cont {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.footer-cont p {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 166%;
+	color: #1e1e1e;
+}
+
+.footer-address {
+	width: 22%;
+}
+
+.footer-address .mail {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.footer-copyright {
+	background-color: #bc9144;
+	color: white;
+	padding: 30px 0px;
+	margin-top: 100px;
+}
+
+.footer-copyright p {
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	line-height: 23px;
+}

@@ -1,0 +1,66 @@
+.sidebar {
+	width: 25%;
+	background-color: #1a1a1a;
+	min-height: 100vh;
+	padding: 50px 50px;
+	position: fixed;
+	left: 0px;
+}
+
+.sidebar-container {
+	height: 100%;
+}
+
+.view {
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: white;
+	opacity: 0.5;
+	line-height: 134%;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.sidebar-links {
+	margin-top: 70px;
+}
+
+.sidebar-logo {
+	display: flex;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.sidebar-logo a {
+	font-family: "Roboto", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: white;
+	margin-left: 33px;
+	text-decoration: none;
+	transition: 1s all ease;
+}
+
+.sidebar-logo a:hover {
+	color: #bc9144;
+	transform: scale(1.2);
+}
+
+.sidebar-logo .active {
+	font-weight: 700;
+}
+
+.logout {
+	margin-top: 150px;
+}
+
+.copy-right {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 131%;
+	color: white;
+	width: 80%;
+	margin-top: 70px;
+}
