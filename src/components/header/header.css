@@ -34,3 +34,49 @@
 	border: 1px solid #bc9144;
 	background-color: black;
 }
+
+.nav-links-mobile {
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+	.header-container {
+		position: relative;
+	}
+
+	.header-logo {
+		display: flex;
+		width: 100%;
+	}
+
+	.header-nav {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 130px;
+		left: -150%;
+		opacity: 1;
+		transition: all 0.5s ease;
+		padding: 0px;
+		background-color: green;
+	}
+
+	.header-nav.actived {
+		background: rgb(36, 34, 34);
+		left: 0;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: 1111111111;
+		margin-left: 0px;
+		width: 100%;
+	}
+
+	.nav-links-mobile {
+		display: block;
+	}
+
+	.nav-links {
+		display: none;
+	}
+}

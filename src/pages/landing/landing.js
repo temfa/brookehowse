@@ -12,6 +12,7 @@ import Vector2 from "../../assets/Vector(2).png";
 import Vector3 from "../../assets/Vector(3).png";
 import Footer from "../../components/footer/footer";
 import Form from "../../components/form/form";
+import Slider from "../../components/slider/slider";
 
 const Landing = () => {
 	return (
@@ -78,6 +79,9 @@ const Landing = () => {
 						</div>
 					</div>
 				</Container>
+			</div>
+			<div className='slideshow-container'>
+				<Slider />
 			</div>
 			<Container>
 				<iframe

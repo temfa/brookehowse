@@ -7,7 +7,7 @@ const SidebarContainer = styled.div`
 	flex: 1;
 	margin-left: 33%;
 	background-color: #fffbf4;
-	padding: 60px 120px 0px 60px;
+	padding: 60px 120px 555px 60px;
 	position: relative;
 
 	.sidebar-body-header {
@@ -20,7 +20,7 @@ const SidebarContainer = styled.div`
 		font-family: "Arsenica";
 		font-size: 36px;
 		font-weight: 400;
-		color: #1a1a1a1;
+		color: #1a1a1a;
 	}
 
 	.sidebar-body {
@@ -39,7 +39,7 @@ const SidebarContainer = styled.div`
 
 const SidebarLayout = ({ children, ...props }) => {
 	return (
-		<div>
+		<div className='big-container'>
 			<Sidebar />
 			<SidebarContainer title='Catalog'>
 				<div className='sidebar-body-header'>

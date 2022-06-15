@@ -25,7 +25,7 @@ const Sidebar = () => {
 					</div>
 					<div className='sidebar-logo logout'>
 						<img src={Logout} alt='New' />
-						<NavLink to='/new'>Logout</NavLink>
+						<NavLink to=''>Logout</NavLink>
 					</div>
 				</div>
 				<p className='copy-right'>
