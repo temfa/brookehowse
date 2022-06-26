@@ -1,5 +1,5 @@
 .about-container {
-	background-color: #000000;
+	background-color: #0b0728;
 	opacity: 0.9;
 	padding: 40px 0px;
 }
@@ -141,4 +141,54 @@
 .core-container .exact-core {
 	width: 70%;
 	margin: 0px auto;
+}
+
+@media screen and (max-width: 900px) {
+	.about-header {
+		flex-direction: column-reverse;
+		width: 100%;
+	}
+
+	.about-header-img,
+	.about-header-text {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.mission-img,
+	.ceo-img {
+		width: 100%;
+	}
+
+	.mission-text,
+	.ceo-text {
+		width: 100%;
+	}
+
+	.mission-text p {
+		width: 100%;
+	}
+
+	.mission-text h3:first-child {
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.about-header-text h2 {
+		font-size: 55px;
+	}
+
+	.core-values,
+	.core-container {
+		flex-direction: column;
+		margin-top: 0px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.about-header-text h2 {
+		font-size: 45px;
+	}
 }

@@ -1,3 +1,7 @@
+.landing {
+	overflow: hidden;
+}
+
 .landing-header {
 	background-image: url(../../assets/Rectangle\ 30.png);
 	background-size: cover;
@@ -122,6 +126,38 @@
 	line-height: 30px;
 }
 
+.slideshow-container {
+	width: 100%;
+}
+
+.map {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding: 150px 0px;
+	align-items: center;
+}
+
+.map iframe {
+	width: 50%;
+	height: 500px;
+}
+
+.map-details {
+	width: 48%;
+	background: rgba(188, 145, 68, 0.14);
+}
+
+.map-details p {
+	width: 75%;
+	color: #1e1e1e;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 250%;
+	margin: 50px auto;
+}
+
 .consultation {
 	background-color: #0b0728;
 	padding: 150px 0px;
@@ -141,4 +177,113 @@
 
 .consultation-form {
 	margin-left: 100px;
+}
+
+.whatsapp {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 99999;
+}
+
+.whatsapp img {
+	width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+	.consultation-body {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.consultation-body {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.offer-body {
+		flex-direction: column;
+	}
+
+	.offer-text {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	.offer-conts {
+		width: 100%;
+	}
+
+	.offer-conts .offer-single:first-child {
+		margin-left: 13px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.welcome-container {
+		flex-direction: column-reverse;
+	}
+
+	.welcome-img {
+		width: 100%;
+	}
+
+	.welcome-text {
+		width: 100%;
+	}
+
+	.consultation-body {
+		flex-direction: column;
+	}
+
+	.consultation-img {
+		width: 100%;
+	}
+
+	.consultation-img img {
+		width: 100%;
+	}
+
+	.consultation-form {
+		margin-left: 0px;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.map {
+		flex-direction: column;
+	}
+
+	.map iframe {
+		width: 100%;
+	}
+
+	.map-details {
+		width: 100%;
+	}
+
+	.offer-conts {
+		flex-direction: column;
+	}
+
+	.offer-conts .offer-single {
+		width: 50%;
+		margin: 0px auto !important;
+	}
+
+	.offer-single h4 {
+		margin: 15px 0px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.offer-conts .offer-single {
+		width: 70%;
+	}
 }

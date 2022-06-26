@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
-import "./properties.css";
+import "../properties/properties.css";
 import Location from "../../assets/Group.png";
 import Swimming from "../../assets/Group 431.png";
 import Game from "../../assets/Group 432.png";
@@ -11,19 +11,35 @@ import ArrowRight from "../../assets/Vector(11).png";
 import Cinema from "../../assets/Vector(7).png";
 import Camera from "../../assets/Vector(6).png";
 import Power from "../../assets/Vector(8).png";
-import House from "../../assets/HN 2 1.png";
-import House1 from "../../assets/HN 3 1.png";
-import House2 from "../../assets/HN 7 1.png";
-import House3 from "../../assets/HN 4 1.png";
 import PropertiesContainer from "../../components/styles/Propeties.styled";
 import Footer from "../../components/footer/footer";
 import Form from "../../components/form/form";
+import { Image } from "cloudinary-react";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
+import { useLocation } from "react-router-dom";
+import Whatsapp from "../../assets/whatsapp.png";
 
-const Properties = () => {
+const Property = () => {
 	window.scrollTo(0, 0);
+	const tempPropertyData = localStorage.getItem("Properties");
+	const [properties] = useState(() => {
+		if (tempPropertyData === "undefined") {
+			return {};
+		} else if (tempPropertyData === null) {
+			return {};
+		} else {
+			return JSON.parse(tempPropertyData);
+		}
+	});
+	const locationUrl = useLocation();
+	useEffect(() => {
+		if (locationUrl.pathname === "/property") {
+			window.location.reload(false);
+		}
+	}, []);
+
 	const [isLoaded, setIsLoaded] = useState(true);
 	useEffect(() => {
 		onValue(ref(db), (snapshot) => {
@@ -34,7 +50,8 @@ const Properties = () => {
 				setIsLoaded(false);
 			}
 		});
-	});
+	}, []);
+
 	return (
 		<>
 			{isLoaded ? (
@@ -48,73 +65,51 @@ const Properties = () => {
 								<div className='properties-header-text'>
 									<div className='location'>
 										<img src={Location} alt='location' />
-										<p>Osoroko, Lagos</p>
+										<p>{properties.first.location}</p>
 									</div>
-									<h2>Helen’s Nest</h2>
+									<h2>{properties.first.propertyName}</h2>
 									<p>
-										Brookehowse Real Estate Limited was established in 2011 and
-										is based in Lagos State, Nigeria.
+										Brookehowse Real Estate was established in 2011 and it's
+										presently based in Lagos state, Nigeria.
 									</p>
 								</div>
 								<div className='properties-header-img'>
-									<img src={House} alt='house' />
+									<Image cloudName='temfad' publicId={properties.first.image} />
 								</div>
 							</div>
 						</Container>
 					</div>
 					<PropertiesContainer>
 						<div className='properties-text'>
-							<p>
-								Helen’s Nest project was birthed out of the realization of an
-								acute shortage of suitable accommodation for the expatriate and
-								senior Nigerian staff of the multiple companies that are either
-								coming or are already in the Free Trade Zone and its environs.
-								Helen’s Nest is conceived as a purpose built, niche targeting
-								product. It comprises of 44 generously proportioned two bedroom
-								serviced apartments (all en-suite).
-							</p>
+							<p>{properties.second.descriptionOneText}</p>
 						</div>
 						<div className='properties-img'>
-							<img src={House1} alt='House' />
+							<Image
+								cloudName='temfad'
+								publicId={properties.second.descriptionOnePic}
+							/>
 						</div>
 					</PropertiesContainer>
 					<div className='properties-complex'>
 						<div className='complex-img'>
-							<img src={House3} alt='House' />
+							<Image
+								cloudName='temfad'
+								publicId={properties.third.descriptionTwoPic}
+							/>
 						</div>
 						<div className='complex-text'>
-							<p>
-								The fully serviced complex promises luxury with ample facilities
-								designed to ensure the maximum comfort and convenience of the
-								residents. The project offers appreciably more: It is situated
-								by two bodies of water. There is a freshwater lagoon nesting by
-								its border, and the Atlantic Ocean right in front of it. The
-								intention is to have a jetty on the lagoon for residents who
-								might be interested in sailing on the lagoon.
-							</p>
+							<p>{properties.third.descriptionTwoText}</p>
 						</div>
 					</div>
 					<PropertiesContainer>
 						<div className='properties-text'>
-							<p>
-								Helen’s Nest is being offered off plan, for a limited period, on
-								a 1st come first serve basis, subject to contract at the price
-								of
-								<span> 45,000,000.00 (forty five million Naira)</span>, subject
-								to availability. Off plan offer lasts till 30 June, 2022, and we
-								are confident that it will be valued at 60,000,000.00 (sixty
-								million Naira) in 18 months, upon completion of the project in
-								February 2024.
-							</p>
-							<p>
-								<span>Payment Terms</span>
-							</p>
-							<p>50% initial deposit, once offer is accepted</p>
-							<p>25% further payment, after 6 months of 1st payment</p>
-							<p>25% balance payment, after 6 months of 2nd payment</p>
+							<p>{properties.fourth.descriptionThreeText}</p>
 						</div>
 						<div className='properties-img'>
-							<img src={House2} alt='House' />
+							<Image
+								cloudName='temfad'
+								publicId={properties.fourth.descriptionThreePic}
+							/>
 						</div>
 					</PropertiesContainer>
 					<div className='appointment'>
@@ -175,6 +170,14 @@ const Properties = () => {
 						</div>
 					</div>
 				</Container> */}
+					<div className='whatsapp'>
+						<a
+							href='https://wa.me/+2348188434844'
+							target='_blank'
+							rel='noreferrer'>
+							<img src={Whatsapp} alt='whatsapp' />
+						</a>
+					</div>
 					<Footer />
 				</div>
 			)}
@@ -182,4 +185,4 @@ const Properties = () => {
 	);
 };
 
-export default Properties;
+export default Property;

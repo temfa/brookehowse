@@ -31,6 +31,20 @@ const PropertiesContainer = styled.div`
 	span {
 		font-weight: 700;
 	}
+
+	@media screen and (max-width: 1000px) {
+		flex-direction: column;
+		margin: 50px;
+
+		.properties-text,
+		.properties-img {
+			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		margin: 20px;
+	}
 `;
 
 export default PropertiesContainer;

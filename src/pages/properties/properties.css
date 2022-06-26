@@ -1,5 +1,5 @@
 .properties-container {
-	background-color: #000000;
+	background-color: #0b0728;
 	opacity: 0.9;
 	padding: 40px 0px;
 }
@@ -73,7 +73,7 @@
 	position: absolute;
 	width: 60%;
 	right: 0;
-	background-color: #1a1a1a;
+	background-color: #0b0728;
 	padding: 59px 0px 59px 126px;
 }
 
@@ -88,10 +88,12 @@
 
 .appointment {
 	display: flex;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .appointment-form {
-	background-color: #1a1a1a;
+	background-color: #0b0728;
 	width: 50%;
 	padding: 100px 140px 100px 120px;
 }
@@ -159,4 +161,89 @@
 	font-weight: 400;
 	color: #1a1a1a;
 	line-height: 113%;
+}
+
+@media screen and (max-width: 1200px) {
+	.amenities {
+		padding: 100px 40px 100px 20px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.appointment-form {
+		padding: 100px 40px 100px 20px;
+	}
+
+	.properties-complex {
+		flex-direction: column;
+		padding: 0px 50px;
+	}
+
+	.properties-complex .complex-img {
+		width: 100%;
+	}
+
+	.properties-complex .complex-text {
+		position: unset;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 59px 20px;
+	}
+
+	.complex-text p {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.appointment-form {
+		padding: 100px 40px 100px 0px;
+	}
+	.properties-header {
+		flex-direction: column-reverse;
+	}
+
+	.properties-header-img,
+	.properties-header-text {
+		width: 100%;
+	}
+
+	.appointment {
+		flex-direction: column;
+	}
+
+	.appointment-form {
+		width: 100%;
+	}
+
+	.amenities {
+		width: 100%;
+		padding: 0px 20px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.amenities {
+		padding: 0px 0px;
+	}
+
+	.amenities-body {
+		flex-direction: column;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	.amenities h2 {
+		text-align: center;
+	}
+
+	.amenities-body div {
+		width: 100%;
+		margin: 15px 0px;
+	}
+
+	.properties-complex {
+		flex-direction: column;
+		padding: 0px 20px;
+	}
 }

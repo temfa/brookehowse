@@ -5,8 +5,14 @@ import Catalog from "../../assets/catalog.png";
 import New from "../../assets/new.png";
 import Logout from "../../assets/logout.png";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+	let navigate = useNavigate();
+	const handleLogout = () => {
+		sessionStorage.removeItem("Auth Token");
+		navigate("/login");
+	};
 	return (
 		<div className='sidebar'>
 			<div className='sidebar-container'>
@@ -25,7 +31,7 @@ const Sidebar = () => {
 					</div>
 					<div className='sidebar-logo logout'>
 						<img src={Logout} alt='New' />
-						<NavLink to=''>Logout</NavLink>
+						<p onClick={handleLogout}>Logout</p>
 					</div>
 				</div>
 				<p className='copy-right'>

@@ -1,5 +1,5 @@
 .contact-header {
-	background-color: #000000;
+	background-color: #0b0728;
 	opacity: 0.9;
 	padding: 40px 0px;
 }
@@ -58,4 +58,20 @@
 .contact-header-img img {
 	width: 100%;
 	height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+	.contact-container {
+		flex-direction: column-reverse;
+	}
+
+	.contact-header-img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.contact-header-text h2 {
+		font-size: 40px;
+	}
 }

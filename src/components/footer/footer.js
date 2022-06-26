@@ -3,8 +3,17 @@ import Button from "../styles/Button.styled";
 import Container from "../styles/Container.styled";
 import "./footer.css";
 import Logo from "../../assets/Vector(5).png";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Footer = () => {
+	const [date, setDate] = useState("");
+	useEffect(() => {
+		let newDate = new Date();
+		setDate(newDate.getFullYear());
+	}, []);
+
 	return (
 		<div className='footer-container'>
 			<div className='footer-newsletter'>
@@ -24,17 +33,14 @@ const Footer = () => {
 							<img src={Logo} alt='logo' />
 						</div>
 						<div className='quick-links'>
-							<p>Home</p>
-							<p>About</p>
-							<p>Services</p>
-							<p>Properties</p>
-							<p>Careers</p>
+							<NavLink to='/'>Home</NavLink>
+							<NavLink to='/about'>About</NavLink>
+							<NavLink to='/properties'>Properties</NavLink>
+							<NavLink to='/contact'>Contact Us</NavLink>
 						</div>
 						<div className='help-links'>
-							<p>Find Property</p>
-							<p>Request Consultation</p>
-							<p>Projects</p>
-							<p>Contact</p>
+							<NavLink to='/terms'>Terms</NavLink>
+							<NavLink to='/privacy'> Privacy</NavLink>
 						</div>
 						<div className='footer-address'>
 							<p>
@@ -48,7 +54,7 @@ const Footer = () => {
 				</Container>
 				<div className='footer-copyright'>
 					<Container>
-						<p>(c) 2022, All Rights Reserved by Brookehowse Realtors</p>
+						<p>(c) {date} All Rights Reserved, Factorial Systems</p>
 					</Container>
 				</div>
 			</div>

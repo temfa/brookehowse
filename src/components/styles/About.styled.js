@@ -7,6 +7,15 @@ const AboutStyle = styled.div`
 	justify-content: space-between;
 	padding: ${({ padding }) => padding};
 	align-items: center;
+
+	@media screen and (max-width: 900px) {
+		width: 90%;
+	}
+
+	@media screen and (max-width: 700px) {
+		flex-direction: column;
+		padding: 20px 0px;
+	}
 `;
 
 export default AboutStyle;

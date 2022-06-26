@@ -13,7 +13,7 @@ const Button = styled.button`
 	&:hover {
 		color: #bc9144;
 		background-color: white;
-		transform: scale(1.1);
+		border: 1px solid #bc9144;
 	}
 `;
 

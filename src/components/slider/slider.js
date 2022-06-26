@@ -1,25 +1,23 @@
 import { useState, useEffect } from "react";
-import { sliderData } from "./slider-data";
 import "./slider.css";
 import ArrowLeft from "../../assets/Vector(10).png";
 import ArrowRight from "../../assets/Vector(11).png";
+import Button from "../styles/Button.styled";
 
-const Slider = () => {
+const Slider = (props) => {
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const slideLength = sliderData.length;
+	const slideLength = props.sliderData.length;
 
 	const autoScroll = true;
 	let slideInterval;
-	let intervalTime = 5000;
+	let intervalTime = 15000;
 
 	const nextSlide = () => {
 		setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-		console.log("next");
 	};
 
 	const prevSlide = () => {
 		setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
-		console.log("prev");
 	};
 
 	function auto() {
@@ -39,21 +37,22 @@ const Slider = () => {
 
 	return (
 		<div className='slider'>
-			<img src={ArrowLeft} alt='arrow' onClick={prevSlide} />
-			<img src={ArrowRight} alt='arrow' onClick={nextSlide} />
-			{sliderData.map((slide, index) => {
+			<img src={ArrowLeft} alt='arrow' onClick={prevSlide} className='left' />
+			<img src={ArrowRight} alt='arrow' onClick={nextSlide} className='right' />
+			{props.sliderData.map((slide, index) => {
 				return (
 					<div
 						className={index === currentSlide ? "slide current" : "slide"}
 						key={index}>
 						{index === currentSlide && (
-							<div>
+							<div className='slide-container'>
 								<img src={slide.image} alt='slide' className='image' />
 								<div className='content'>
 									<h2>{slide.heading}</h2>
 									<p>{slide.desc}</p>
-									<hr />
-									<button className='--btn --btn-primary'>Get Started</button>
+									<Button padding='20px 20px' bg='#bc9144'>
+										Learn More
+									</Button>
 								</div>
 							</div>
 						)}

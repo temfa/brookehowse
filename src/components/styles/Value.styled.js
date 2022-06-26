@@ -13,6 +13,11 @@ const ValueStyle = styled.div`
 		color: white;
 		line-height: 120%;
 	}
+
+	@media screen and (max-width: 600px) {
+		width: 100%;
+		margin-top: 10px;
+	}
 `;
 
 export default ValueStyle;

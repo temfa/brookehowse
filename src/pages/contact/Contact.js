@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
@@ -9,38 +9,68 @@ import Facebook from "../../assets/facebook.svg";
 import Instagram from "../../assets/instagram.svg";
 import Be from "../../assets/be.svg";
 import Linken from "../../assets/linken.svg";
+import { db } from "../../utils/firebase-config";
+import { ref, onValue } from "firebase/database";
+import Loader from "../../components/loader/loader";
+import Whatsapp from "../../assets/whatsapp.png";
 
 const Contact = () => {
+	window.scrollTo(0, 0);
+	const [isLoaded, setIsLoaded] = useState(true);
+	useEffect(() => {
+		onValue(ref(db), (snapshot) => {
+			const data = snapshot.val();
+			if (data !== null) {
+				setIsLoaded(false);
+			} else {
+				setIsLoaded(false);
+			}
+		});
+	}, []);
 	return (
-		<div className='contact'>
-			<div className='contact-header'>
-				<Container>
-					<Header />
-					<div className='contact-container'>
-						<div className='contact-header-text'>
-							<h2>Get in touch with BrookHowse Realtors</h2>
-							<p>
-								15A, Ogbunike Street, Off Wole Olateju Crescent, Off Admiralty
-								Way, Lekki Phase 1, Lagos
-							</p>
-							<p className='mail'>info@brookehowse.com</p>
-							<p className='phone'>+234-01-2716885</p>
-							<div className='social-icons'>
-								<img src={Twitter} alt='Twitter' />
-								<img src={Facebook} alt='Facebook' />
-								<img src={Linken} alt='Linken' />
-								<img src={Instagram} alt='Instagram' />
-								<img src={Be} alt='Be' />
+		<>
+			{isLoaded ? (
+				<Loader />
+			) : (
+				<div className='contact'>
+					<div className='contact-header'>
+						<Container>
+							<Header />
+							<div className='contact-container'>
+								<div className='contact-header-text'>
+									<h2>Get in touch with BrookHowse Realtors</h2>
+									<p>
+										15A, Ogbunike Street, Off Wole Olateju Crescent, Off
+										Admiralty Way, Lekki Phase 1, Lagos
+									</p>
+									<p className='mail'>info@brookehowse.com</p>
+									<p className='phone'>+234-01-2716885</p>
+									<div className='social-icons'>
+										<img src={Twitter} alt='Twitter' />
+										<img src={Facebook} alt='Facebook' />
+										<img src={Linken} alt='Linken' />
+										<img src={Instagram} alt='Instagram' />
+										<img src={Be} alt='Be' />
+									</div>
+								</div>
+								<div className='contact-header-img'>
+									<img src={House} alt='House' />
+								</div>
 							</div>
-						</div>
-						<div className='contact-header-img'>
-							<img src={House} alt='House' />
-						</div>
+						</Container>
 					</div>
-				</Container>
-			</div>
-			<Footer />
-		</div>
+					<div className='whatsapp'>
+						<a
+							href='https://wa.me/+2348188434844'
+							target='_blank'
+							rel='noreferrer'>
+							<img src={Whatsapp} alt='whatsapp' />
+						</a>
+					</div>
+					<Footer />
+				</div>
+			)}
+		</>
 	);
 };
 

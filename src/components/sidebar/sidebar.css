@@ -1,10 +1,8 @@
 .sidebar {
 	width: 25%;
-	background-color: #1a1a1a;
+	background-color: #0b0728;
 	min-height: 100vh;
 	padding: 50px 50px;
-	position: fixed;
-	left: 0px;
 }
 
 .sidebar-container {
@@ -32,7 +30,8 @@
 	margin-bottom: 40px;
 }
 
-.sidebar-logo a {
+.sidebar-logo a,
+.sidebar-logo p {
 	font-family: "Roboto", sans-serif;
 	font-size: 18px;
 	font-weight: 400;
@@ -43,6 +42,11 @@
 }
 
 .sidebar-logo a:hover {
+	color: #bc9144;
+	transform: scale(1.2);
+}
+
+.sidebar-logo p:hover {
 	color: #bc9144;
 	transform: scale(1.2);
 }
@@ -63,4 +67,50 @@
 	color: white;
 	width: 80%;
 	margin-top: 70px;
+}
+
+.big-container {
+	display: flex;
+	width: 100%;
+}
+@media screen and (max-width: 1120px) {
+	.sidebar-container > img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.sidebar {
+		padding: 50px 20px;
+	}
+
+	.copy-right {
+		width: 100%;
+	}
+
+	.sidebar-logo a,
+	.sidebar-logo p {
+		margin-left: 20px;
+	}
+}
+
+@media screen and (max-width: 532px) {
+	.sidebar-logo a,
+	.sidebar-logo p {
+		margin-left: 10px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.sidebar-logo a,
+	.sidebar-logo p {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.sidebar-logo a,
+	.sidebar-logo p {
+		font-size: 12px;
+	}
 }

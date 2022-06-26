@@ -1,0 +1,89 @@
+.login-container {
+	background-color: #0b0728;
+	opacity: 0.9;
+	padding: 40px 0px 400px 0px;
+	height: 100%;
+}
+
+.login-cont {
+	display: flex;
+	position: relative;
+	/* align-items: center; */
+	margin-top: 100px;
+}
+
+.login-img {
+	width: 70%;
+}
+
+.login-img img {
+	width: 100%;
+}
+
+.login-group {
+	position: absolute;
+	right: 0px;
+	background-color: #bc9144;
+	padding: 68px 92px;
+}
+
+.login-group h2 {
+	width: 55%;
+}
+
+.login-group p {
+	text-align: center;
+	font-size: 17px;
+	font-weight: 300;
+	font-family: "Roboto", sans-serif;
+	margin-top: 30px;
+	color: white;
+}
+
+.login-group a {
+	text-decoration: none;
+	font-size: 20px;
+	text-transform: capitalize;
+	color: white;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 1040px) {
+	.login-group {
+		position: unset;
+		width: 50%;
+		margin: 0px auto;
+	}
+
+	.login-group h2 {
+		width: 60%;
+	}
+
+	.login-img {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 832px) {
+	.login-group h2 {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 712px) {
+	.login-group h2 {
+		width: 75%;
+	}
+
+	.login-group {
+		padding: 68px 20px;
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 541px) {
+	.login-group h2 {
+		width: 100%;
+	}
+}
