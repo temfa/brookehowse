@@ -23,7 +23,7 @@ import Slider from "../../components/slider/slider";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
-import Whatsapp from "../../assets/Group 445.png";
+import Whatsapp from "../../assets/whatsapp.png";
 
 const Landing = () => {
 	window.scrollTo(0, 0);
@@ -191,7 +191,7 @@ const Landing = () => {
 					</div>
 					<div className='whatsapp'>
 						<a
-							href='https://wa.me/+2348188434844'
+							href='https://wa.me/+2348179461702'
 							target='_blank'
 							rel='noreferrer'>
 							<img src={Whatsapp} alt='whatsapp' />

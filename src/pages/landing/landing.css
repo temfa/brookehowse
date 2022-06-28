@@ -233,7 +233,7 @@
 
 .whatsapp {
 	position: fixed;
-	bottom: -50px;
+	bottom: 50px;
 	right: 20px;
 	cursor: pointer;
 	z-index: 99999;

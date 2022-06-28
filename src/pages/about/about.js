@@ -13,7 +13,7 @@ import ValueStyle from "../../components/styles/Value.styled";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
-import Whatsapp from "../../assets/Group 445.png";
+import Whatsapp from "../../assets/whatsapp.png";
 
 const About = () => {
 	window.scrollTo(0, 0);
@@ -140,7 +140,7 @@ const About = () => {
 					</Container>
 					<div className='whatsapp'>
 						<a
-							href='https://wa.me/+2348188434844'
+							href='https://wa.me/+2348179461702'
 							target='_blank'
 							rel='noreferrer'>
 							<img src={Whatsapp} alt='whatsapp' />

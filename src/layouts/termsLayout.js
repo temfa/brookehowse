@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Container from "../components/styles/Container.styled";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
-import Whatsapp from "../assets/Group 445.png";
+import Whatsapp from "../assets/whatsapp.png";
 
 const TermsStyled = styled.div`
 	padding: 40px 0px;
@@ -128,7 +128,7 @@ const TermsLayout = ({ children, title }) => {
 			</Container>
 			<Container>{children}</Container>
 			<div className='whatsapp'>
-				<a href='https://wa.me/+2348188434844' target='_blank' rel='noreferrer'>
+				<a href='https://wa.me/+2348179461702' target='_blank' rel='noreferrer'>
 					<img src={Whatsapp} alt='whatsapp' />
 				</a>
 			</div>
