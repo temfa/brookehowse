@@ -21,9 +21,13 @@ const Header = ({ color }) => {
 			width: 30%;
 		}
 
+		.header-logo img {
+			width: 50%;
+		}
+
 		.header-nav a {
 			color: ${({ color }) => color};
-			font-size: 20px;
+			font-size: 17px;
 			font-weight: 300;
 			font-family: "Roboto", sans-serif;
 			line-height: 23px;
@@ -86,10 +90,6 @@ const Header = ({ color }) => {
 		}
 		@media screen and (max-width: 1050px) {
 			position: relative;
-
-			.header-logo img {
-				width: 50%;
-			}
 
 			.header-logo {
 				display: flex;
@@ -226,7 +226,7 @@ const Header = ({ color }) => {
 													"Properties",
 													JSON.stringify(item)
 												);
-												if (locationUrl.pathname === "/property") {
+												if (propertyData.length !== 1) {
 													window.location.reload();
 												}
 											}}
@@ -243,7 +243,7 @@ const Header = ({ color }) => {
 					to='/contact'
 					className='nav-links-mobile'
 					onClick={closeMobileMenu}>
-					<Button padding='23px 65px' bg='#bc9144'>
+					<Button padding='20px 65px' bg='#bc9144'>
 						Contact
 					</Button>
 				</NavLink>

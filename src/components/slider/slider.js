@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "./slider.css";
-import ArrowLeft from "../../assets/Vector(10).png";
-import ArrowRight from "../../assets/Vector(11).png";
+import ArrowLeft from "../../assets/Vector(13).png";
+import ArrowRight from "../../assets/Vector(12).png";
 import Button from "../styles/Button.styled";
+import { Image } from "cloudinary-react";
 
 const Slider = (props) => {
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,7 +11,7 @@ const Slider = (props) => {
 
 	const autoScroll = true;
 	let slideInterval;
-	let intervalTime = 15000;
+	let intervalTime = 5000;
 
 	const nextSlide = () => {
 		setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
@@ -46,7 +47,12 @@ const Slider = (props) => {
 						key={index}>
 						{index === currentSlide && (
 							<div className='slide-container'>
-								<img src={slide.image} alt='slide' className='image' />
+								<div className='slide-overlay'></div>
+								<Image
+									cloudName='temfad'
+									publicId={slide.image}
+									className='image'
+								/>
 								<div className='content'>
 									<h2>{slide.heading}</h2>
 									<p>{slide.desc}</p>

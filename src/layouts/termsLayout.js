@@ -3,12 +3,15 @@ import styled from "styled-components";
 import Container from "../components/styles/Container.styled";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
+import Whatsapp from "../assets/Group 445.png";
 
 const TermsStyled = styled.div`
 	padding: 40px 0px;
 
 	.terms-header {
 		margin: 100px 0px 50px 0px;
+		width: 100%;
+		text-align: center;
 	}
 
 	.terms-header h2 {
@@ -17,7 +20,7 @@ const TermsStyled = styled.div`
 		font-weight: 400;
 		color: #000000;
 		font-family: "ArsenicaBold";
-		text-align: center;
+		margin: 0px auto;
 	}
 
 	.terms-details {
@@ -124,6 +127,11 @@ const TermsLayout = ({ children, title }) => {
 				</div>
 			</Container>
 			<Container>{children}</Container>
+			<div className='whatsapp'>
+				<a href='https://wa.me/+2348188434844' target='_blank' rel='noreferrer'>
+					<img src={Whatsapp} alt='whatsapp' />
+				</a>
+			</div>
 			<Footer />
 		</TermsStyled>
 	);

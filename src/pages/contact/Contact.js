@@ -12,7 +12,8 @@ import Linken from "../../assets/linken.svg";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
-import Whatsapp from "../../assets/whatsapp.png";
+import Whatsapp from "../../assets/Group 445.png";
+import Rectangle from "../../assets/Rectangle 29.png";
 
 const Contact = () => {
 	window.scrollTo(0, 0);
@@ -35,7 +36,7 @@ const Contact = () => {
 				<div className='contact'>
 					<div className='contact-header'>
 						<Container>
-							<Header />
+							<Header color='white' />
 							<div className='contact-container'>
 								<div className='contact-header-text'>
 									<h2>Get in touch with BrookHowse Realtors</h2>
@@ -54,7 +55,10 @@ const Contact = () => {
 									</div>
 								</div>
 								<div className='contact-header-img'>
-									<img src={House} alt='House' />
+									<img src={Rectangle} alt='rectangle' className='rectangle5' />
+									<div>
+										<img src={House} alt='House' />
+									</div>
 								</div>
 							</div>
 						</Container>

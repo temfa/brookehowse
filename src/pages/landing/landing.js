@@ -6,7 +6,14 @@ import "./landing.css";
 import Overlay from "../../assets/Rectangle 2.png";
 import Lady from "../../assets/Rectangle 6.png";
 import House from "../../assets/Rectangle 25.png";
+import Rectangle from "../../assets/Rectangle 29.png";
+import Rectangle2 from "../../assets/Rectangle 31.png";
+import Log from "../../assets/Group 444.png";
+import Chat from "../../assets/Group 443.png";
+import Arrow from "../../assets/arrowup.png";
+import Arrowleft from "../../assets/arrowleft.png";
 import Vector from "../../assets/Vector.png";
+import Group from "../../assets/Group 419.png";
 import Vector1 from "../../assets/Vector(1).png";
 import Vector2 from "../../assets/Vector(2).png";
 import Vector3 from "../../assets/Vector(3).png";
@@ -16,15 +23,17 @@ import Slider from "../../components/slider/slider";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
-import Whatsapp from "../../assets/whatsapp.png";
+import Whatsapp from "../../assets/Group 445.png";
 
 const Landing = () => {
 	window.scrollTo(0, 0);
 	const [isLoaded, setIsLoaded] = useState(true);
+	const [slideshowImg, setSlideshowImg] = useState("");
 	useEffect(() => {
 		onValue(ref(db), (snapshot) => {
 			const data = snapshot.val();
 			if (data !== null) {
+				setSlideshowImg(Object.values(data.newProperty)[0]);
 				setIsLoaded(false);
 			} else {
 				setIsLoaded(false);
@@ -49,7 +58,7 @@ const Landing = () => {
 										</h2>
 										<p>
 											We offer real estate services with world-class
-											professionalism with the{" "}
+											professionalism with the
 											<span>
 												<br />
 												aim to give you comfort, luxury an affordable
@@ -58,10 +67,16 @@ const Landing = () => {
 										</p>
 										<Button padding='28px 41px' bg='#bc9144'>
 											Get Started
+											<span>
+												<img src={Arrow} alt='arrow' />
+											</span>
 										</Button>
 									</div>
 									<div className='welcome-img'>
-										<img src={House} alt='House' />
+										<img src={Rectangle} alt='House' className='rectangle' />
+										<div>
+											<img src={House} alt='House' />
+										</div>
 									</div>
 								</div>
 							</Container>
@@ -103,26 +118,33 @@ const Landing = () => {
 							</div>
 						</Container>
 					</div>
+					<img src={Group} alt='group' className='group-vector' />
 					<div className='slideshow-container'>
+						<div className='slideshow-overlay'></div>
 						<Slider
 							sliderData={[
 								{
-									image: require("../../assets/HN 5 1.png"),
+									image: slideshowImg.first.image,
 									heading: "Helen's Nest ",
 									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
 								},
 								{
-									image: require("../../assets/HN 2 1.png"),
+									image: slideshowImg.second.descriptionOnePic,
 									heading: "Helen's Nest ",
 									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
 								},
 								{
-									image: require("../../assets/HN 3 1.png"),
+									image: slideshowImg.third.descriptionTwoPic,
 									heading: "Helen's Nest ",
 									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
 								},
 								{
-									image: require("../../assets/HN 4 1.png"),
+									image: slideshowImg.fourth.descriptionThreePic,
+									heading: "Helen's Nest ",
+									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
+								},
+								{
+									image: slideshowImg.fifth.amenitiesPic,
 									heading: "Helen's Nest ",
 									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
 								},
@@ -150,13 +172,17 @@ const Landing = () => {
 									targeting product. It comprises of 44 generously proportioned
 									two bedroom serviced apartments (all en-suite).
 								</p>
+								<img src={Arrowleft} alt='Arrow' />
 							</div>
 						</div>
 					</Container>
 					<div className='consultation'>
 						<div className='consultation-body'>
 							<div className='consultation-img'>
+								<img src={Log} alt='log' className='log' />
+								<img src={Rectangle2} alt='' className='rectangle2' />
 								<img src={Lady} alt='lady' />
+								<img src={Chat} alt='chat' className='chat' />
 							</div>
 							<div className='consultation-form'>
 								<Form title='Request for consultation' size='60px' />
@@ -171,6 +197,7 @@ const Landing = () => {
 							<img src={Whatsapp} alt='whatsapp' />
 						</a>
 					</div>
+					<img src={Group} alt='group' className='group-vector2' />
 					<Footer />
 				</div>
 			)}
