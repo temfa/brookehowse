@@ -23,6 +23,8 @@ import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
 import Whatsapp from "../../assets/whatsapp.png";
+import VerticalSlants from "../../assets/vertical-slants.svg";
+import SquareSlants from "../../assets/square-slants.svg";
 
 const Landing = () => {
 	window.scrollTo(0, 0);
