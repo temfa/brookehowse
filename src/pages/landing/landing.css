@@ -139,17 +139,19 @@
 	line-height: 30px;
 }
 
-.group-vector {
+.vertical-slants {
 	position: absolute;
-	top: 190%;
-	right: 10%;
+	top: -6.7rem;
+	left: 0;
 	z-index: 1;
 }
 
-.group-vector2 {
+.square-slants {
 	position: absolute;
-	top: 580%;
-	right: 25%;
+	bottom: -4rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	z-index: 1;
 }
 
@@ -192,6 +194,7 @@
 .consultation {
 	background-color: #0b0728;
 	padding: 150px 0px 250px;
+	position: relative;
 }
 
 .consultation-body {
@@ -250,8 +253,8 @@
 
 	.rectangle,
 	.rectangle2,
-	.group-vector,
-	.group-vector2,
+	.vertical-slants,
+	.square-slants,
 	.log,
 	.chat {
 		display: none;

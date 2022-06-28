@@ -2,19 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyCUwPcI0W9Y3JMPjL1_7SxLGOdSgTyuII4",
-
-	authDomain: "brookehowse-5ce94.firebaseapp.com",
-
-	databaseURL: "https://brookehowse-5ce94-default-rtdb.firebaseio.com",
-
-	projectId: "brookehowse-5ce94",
-
-	storageBucket: "brookehowse-5ce94.appspot.com",
-
-	messagingSenderId: "1057421189565",
-
-	appId: "1:1057421189565:web:bb08399da15e75509b72d4",
+	apiKey: "AIzaSyDuBHQ30NlWqA5ZPo4uW-heePcrH8dBvBY",
+	authDomain: "brookhowse-8963d.firebaseapp.com",
+	projectId: "brookhowse-8963d",
+	storageBucket: "brookhowse-8963d.appspot.com",
+	messagingSenderId: "492070596650",
+	appId: "1:492070596650:web:dbbc6de1f9c43cf61d9353",
+	measurementId: "G-E0PF00TEZD"
 };
 
 const app = initializeApp(firebaseConfig);

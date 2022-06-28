@@ -13,7 +13,6 @@ import Chat from "../../assets/Group 443.png";
 import Arrow from "../../assets/arrowup.png";
 import Arrowleft from "../../assets/arrowleft.png";
 import Vector from "../../assets/Vector.png";
-import Group from "../../assets/Group 419.png";
 import Vector1 from "../../assets/Vector(1).png";
 import Vector2 from "../../assets/Vector(2).png";
 import Vector3 from "../../assets/Vector(3).png";
@@ -118,39 +117,41 @@ const Landing = () => {
 							</div>
 						</Container>
 					</div>
-					<img src={Group} alt='group' className='group-vector' />
-					<div className='slideshow-container'>
-						<div className='slideshow-overlay'></div>
-						<Slider
-							sliderData={[
-								{
-									image: slideshowImg.first.image,
-									heading: "Helen's Nest ",
-									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
-								},
-								{
-									image: slideshowImg.second.descriptionOnePic,
-									heading: "Helen's Nest ",
-									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
-								},
-								{
-									image: slideshowImg.third.descriptionTwoPic,
-									heading: "Helen's Nest ",
-									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
-								},
-								{
-									image: slideshowImg.fourth.descriptionThreePic,
-									heading: "Helen's Nest ",
-									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
-								},
-								{
-									image: slideshowImg.fifth.amenitiesPic,
-									heading: "Helen's Nest ",
-									desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
-								},
-							]}
-						/>
-					</div>
+
+					{slideshowImg && (
+						<div className='slideshow-container'>
+							<div className='slideshow-overlay'></div>
+							<Slider
+								sliderData={[
+									{
+										image: slideshowImg.first.image,
+										heading: "Helen's Nest ",
+										desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
+									},
+									{
+										image: slideshowImg.second.descriptionOnePic,
+										heading: "Helen's Nest ",
+										desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
+									},
+									{
+										image: slideshowImg.third.descriptionTwoPic,
+										heading: "Helen's Nest ",
+										desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
+									},
+									{
+										image: slideshowImg.fourth.descriptionThreePic,
+										heading: "Helen's Nest ",
+										desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
+									},
+									{
+										image: slideshowImg.fifth.amenitiesPic,
+										heading: "Helen's Nest ",
+										desc: "Brookehowse Real Estate Limited was established in 2011 and is based in Lagos State, Nigeria",
+									},
+								]}
+							/>
+						</div>
+					)}
 					<Container>
 						<div className='map'>
 							<iframe
@@ -188,6 +189,12 @@ const Landing = () => {
 								<Form title='Request for consultation' size='60px' />
 							</div>
 						</div>
+						<div className='vertical-slants'>
+							<img src={VerticalSlants} alt='vertical slants' />
+						</div>
+						<div className='square-slants'>
+							<img src={SquareSlants} alt='square slants' />
+						</div>
 					</div>
 					<div className='whatsapp'>
 						<a
@@ -197,7 +204,6 @@ const Landing = () => {
 							<img src={Whatsapp} alt='whatsapp' />
 						</a>
 					</div>
-					<img src={Group} alt='group' className='group-vector2' />
 					<Footer />
 				</div>
 			)}
