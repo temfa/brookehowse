@@ -13,7 +13,6 @@ import Chat from "../../assets/Group 443.png";
 import Arrow from "../../assets/arrowup.png";
 import Arrowleft from "../../assets/arrowleft.png";
 import Vector from "../../assets/Vector.png";
-import Group from "../../assets/Group 419.png";
 import Vector1 from "../../assets/Vector(1).png";
 import Vector2 from "../../assets/Vector(2).png";
 import Vector3 from "../../assets/Vector(3).png";
@@ -24,6 +23,8 @@ import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
 import Whatsapp from "../../assets/Group 445.png";
+import VerticalSlants from "../../assets/vertical-slants.svg";
+import SquareSlants from "../../assets/square-slants.svg";
 
 const Landing = () => {
 	window.scrollTo(0, 0);
@@ -118,8 +119,8 @@ const Landing = () => {
 							</div>
 						</Container>
 					</div>
-					<img src={Group} alt='group' className='group-vector' />
-					<div className='slideshow-container'>
+
+					{slideshowImg && <div className='slideshow-container'>
 						<div className='slideshow-overlay'></div>
 						<Slider
 							sliderData={[
@@ -150,7 +151,7 @@ const Landing = () => {
 								},
 							]}
 						/>
-					</div>
+					</div>}
 					<Container>
 						<div className='map'>
 							<iframe
@@ -188,6 +189,8 @@ const Landing = () => {
 								<Form title='Request for consultation' size='60px' />
 							</div>
 						</div>
+						<div className='vertical-slants'><img src={VerticalSlants} alt='vertical slants' /></div>
+						<div className='square-slants'><img src={SquareSlants} alt='square slants' /></div>
 					</div>
 					<div className='whatsapp'>
 						<a
@@ -197,7 +200,6 @@ const Landing = () => {
 							<img src={Whatsapp} alt='whatsapp' />
 						</a>
 					</div>
-					<img src={Group} alt='group' className='group-vector2' />
 					<Footer />
 				</div>
 			)}
