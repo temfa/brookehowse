@@ -57,11 +57,24 @@
 	margin-top: 42px;
 }
 
-.welcome-img {
-	width: 42%;
+.welcome-text button img {
+	margin-left: 20px;
 }
 
-.welcome-img img {
+.welcome-img {
+	width: 42%;
+	position: relative;
+}
+
+.rectangle {
+	width: 90%;
+	top: 20px;
+	left: 20px;
+	height: 90%;
+	position: absolute;
+}
+
+.welcome-img div img {
 	width: 100%;
 }
 
@@ -126,6 +139,20 @@
 	line-height: 30px;
 }
 
+.group-vector {
+	position: absolute;
+	top: 190%;
+	right: 10%;
+	z-index: 1;
+}
+
+.group-vector2 {
+	position: absolute;
+	top: 580%;
+	right: 25%;
+	z-index: 1;
+}
+
 .slideshow-container {
 	width: 100%;
 }
@@ -135,7 +162,7 @@
 	width: 100%;
 	justify-content: space-between;
 	padding: 150px 0px;
-	align-items: center;
+	/* align-items: center; */
 }
 
 .map iframe {
@@ -155,12 +182,16 @@
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 250%;
-	margin: 50px auto;
+	margin: 50px auto 0px;
+}
+
+.map-details img {
+	margin: 20px 70px;
 }
 
 .consultation {
 	background-color: #0b0728;
-	padding: 150px 0px;
+	padding: 150px 0px 250px;
 }
 
 .consultation-body {
@@ -173,6 +204,27 @@
 
 .consultation-img {
 	width: 50%;
+	position: relative;
+}
+
+.consultation-img .log {
+	position: absolute;
+	top: 130px;
+	left: -150px;
+	z-index: 1;
+}
+
+.consultation-img .chat {
+	position: absolute;
+	top: 430px;
+	right: -40px;
+	z-index: 1;
+}
+
+.rectangle2 {
+	position: absolute;
+	left: -30px;
+	bottom: -30px;
 }
 
 .consultation-form {
@@ -181,7 +233,7 @@
 
 .whatsapp {
 	position: fixed;
-	bottom: 20px;
+	bottom: -50px;
 	right: 20px;
 	cursor: pointer;
 	z-index: 99999;
@@ -194,6 +246,15 @@
 @media screen and (max-width: 1220px) {
 	.consultation-body {
 		width: 80%;
+	}
+
+	.rectangle,
+	.rectangle2,
+	.group-vector,
+	.group-vector2,
+	.log,
+	.chat {
+		display: none;
 	}
 }
 

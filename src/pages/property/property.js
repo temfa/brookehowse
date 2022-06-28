@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
-import "../properties/properties.css";
+import "./property.css";
 import Location from "../../assets/Group.png";
 import Swimming from "../../assets/Group 431.png";
 import Game from "../../assets/Group 432.png";
@@ -18,8 +18,9 @@ import { Image } from "cloudinary-react";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
-import { useLocation } from "react-router-dom";
-import Whatsapp from "../../assets/whatsapp.png";
+import Whatsapp from "../../assets/Group 445.png";
+// import Rectangle from "../../assets/Rectangle 29.png";
+import Slider from "../../components/slider/slider";
 
 const Property = () => {
 	window.scrollTo(0, 0);
@@ -33,12 +34,6 @@ const Property = () => {
 			return JSON.parse(tempPropertyData);
 		}
 	});
-	const locationUrl = useLocation();
-	useEffect(() => {
-		if (locationUrl.pathname === "/property") {
-			window.location.reload(false);
-		}
-	}, []);
 
 	const [isLoaded, setIsLoaded] = useState(true);
 	useEffect(() => {
@@ -60,7 +55,7 @@ const Property = () => {
 				<div className='properties'>
 					<div className='properties-container'>
 						<Container>
-							<Header />
+							<Header color='white' />
 							<div className='properties-header'>
 								<div className='properties-header-text'>
 									<div className='location'>
@@ -74,7 +69,13 @@ const Property = () => {
 									</p>
 								</div>
 								<div className='properties-header-img'>
-									<Image cloudName='temfad' publicId={properties.first.image} />
+									{/* <img src={Rectangle} alt='rectangle' className='rectangle4' /> */}
+									<div>
+										<Image
+											cloudName='temfad'
+											publicId={properties.first.image}
+										/>
+									</div>
 								</div>
 							</div>
 						</Container>
@@ -162,14 +163,43 @@ const Property = () => {
 					</div>
 
 					{/* <Container>
-					<div className='explore-header'>
-						<h2>Explore Gallery</h2>
-						<div className='explore-header-img'>
-							<img src={ArrowLeft} alt='Arrow' />
-							<img src={ArrowRight} alt='Arrow' />
+						<div className='explore-header'>
+							<h2>Explore Gallery</h2>
+							<div className='explore-header-img'>
+								<img src={ArrowLeft} alt='Arrow' />
+								<img src={ArrowRight} alt='Arrow' />
+							</div>
 						</div>
-					</div>
-				</Container> */}
+						<Slider
+							sliderData={[
+								{
+									image: properties.first.image,
+									heading: " ",
+									desc: "",
+								},
+								{
+									image: properties.second.descriptionOnePic,
+									heading: " ",
+									desc: "",
+								},
+								{
+									image: properties.third.descriptionTwoPic,
+									heading: " ",
+									desc: "",
+								},
+								{
+									image: properties.fourth.descriptionThreePic,
+									heading: " ",
+									desc: "",
+								},
+								{
+									image: properties.fifth.amenitiesPic,
+									heading: " ",
+									desc: "",
+								},
+							]}
+						/>
+					</Container> */}
 					<div className='whatsapp'>
 						<a
 							href='https://wa.me/+2348188434844'

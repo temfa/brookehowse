@@ -75,7 +75,7 @@ const Login = (props) => {
 		<div className='login-container'>
 			<ToastContainer />
 			<Container>
-				<Header />
+				<Header color='white' />
 				<div className='login-cont'>
 					<div className='login-img'>
 						<img src={LoginImage} alt='loginimage' />

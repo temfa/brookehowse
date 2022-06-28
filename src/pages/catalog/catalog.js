@@ -33,7 +33,6 @@ const Catalog = () => {
 			}
 		});
 	};
-	console.log(propertyData);
 	useEffect(() => {
 		let authToken = sessionStorage.getItem("Auth Token");
 

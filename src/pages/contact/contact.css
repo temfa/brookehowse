@@ -1,6 +1,6 @@
 .contact-header {
 	background-color: #0b0728;
-	opacity: 0.9;
+	/* opacity: 0.9; */
 	padding: 40px 0px;
 }
 
@@ -53,11 +53,25 @@
 
 .contact-header-img {
 	width: 50%;
+	position: relative;
 }
 
-.contact-header-img img {
+.rectangle5 {
+	position: absolute;
+	top: 50px;
+	width: 80%;
+	left: 50px;
+}
+
+.contact-header-img div img {
 	width: 100%;
 	height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+	.rectangle5 {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 1000px) {

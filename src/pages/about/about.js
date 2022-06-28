@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
+import Rectangle from "../../assets/Rectangle 29.png";
 import House from "../../assets/Rectangle 25(1).png";
 import CEO from "../../assets/Rectangle 27.png";
 import Mission from "../../assets/Rectangle 30(1).png";
@@ -12,7 +13,7 @@ import ValueStyle from "../../components/styles/Value.styled";
 import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
-import Whatsapp from "../../assets/whatsapp.png";
+import Whatsapp from "../../assets/Group 445.png";
 
 const About = () => {
 	window.scrollTo(0, 0);
@@ -50,7 +51,10 @@ const About = () => {
 									</p>
 								</div>
 								<div className='about-header-img'>
-									<img src={House} alt='House' />
+									<img src={Rectangle} alt='rectangle' className='rectangle3' />
+									<div>
+										<img src={House} alt='House' />
+									</div>
 								</div>
 							</div>
 						</Container>
@@ -109,24 +113,24 @@ const About = () => {
 					<Container>
 						<h2 className='core-header'>Core Values</h2>
 						<div className='core-values'>
-							<ValueStyle bg='#0B0728' width='28%' padding='53px 0px'>
+							<ValueStyle bg='#0B0728' width='28%'>
 								<p>Commitment to excellence</p>
 							</ValueStyle>
-							<ValueStyle bg='#BC9144' width='18%' padding='53px 0px'>
+							<ValueStyle bg='#BC9144' width='18%'>
 								<p>Efficiency</p>
 							</ValueStyle>
-							<ValueStyle bg='#BC9144' width='23%' padding='53px 0px'>
+							<ValueStyle bg='#BC9144' width='23%'>
 								<p>Respect</p>
 							</ValueStyle>
-							<ValueStyle bg='#0B0728' width='23%' padding='53px 0px'>
+							<ValueStyle bg='#0B0728' width='23%'>
 								<p>Accountability</p>
 							</ValueStyle>
 						</div>
 						<div className='core-container'>
-							<ValueStyle bg='#0B0728' width='45%' padding='53px 0px'>
+							<ValueStyle bg='#0B0728' width='45%'>
 								<p>Integrity in interaction and transaction delivery</p>
 							</ValueStyle>
-							<ValueStyle bg='#0B0728' width='50%' padding='53px 0px'>
+							<ValueStyle bg='#0B0728' width='50%'>
 								<p className='exact-core'>
 									Solution-Based: Constantly aimed at providing solutions to
 									problems in real estate industry
