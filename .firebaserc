@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "brookehowse-5ce94"
-  }
+    "default": "brookhowse-8963d",
+    "production": "brookhowse-8963d"
+  },
+  "targets": {}
 }
