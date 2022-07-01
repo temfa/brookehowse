@@ -68,7 +68,10 @@ const Footer = () => {
 				</Container>
 				<div className='footer-copyright'>
 					<Container>
-						<p>(c) {date} All Rights Reserved, Factorial Systems</p>
+						<p>
+							<span>(c) {date} All Rights Reserved, </span> 
+							<a href="" target="_blank">Factorial Systems</a>
+						</p>
 					</Container>
 				</div>
 			</div>
