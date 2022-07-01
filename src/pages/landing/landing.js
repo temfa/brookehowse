@@ -66,12 +66,14 @@ const Landing = () => {
 												accommodation.
 											</span>
 										</p>
-										<Button padding='28px 41px' bg='#bc9144'>
-											Get Started
-											<span>
-												<img src={Arrow} alt='arrow' />
-											</span>
-										</Button>
+										<a href='#offer'>
+											<Button padding='28px 41px' bg='#bc9144'>
+												Get Started
+												<span>
+													<img src={Arrow} alt='arrow' />
+												</span>
+											</Button>
+										</a>
 									</div>
 									<div className='welcome-img'>
 										<img src={Rectangle} alt='House' className='rectangle' />
@@ -83,7 +85,7 @@ const Landing = () => {
 							</Container>
 						</div>
 					</div>
-					<div className='offer'>
+					<div className='offer' id='offer'>
 						<Container>
 							<div className='offer-body'>
 								<div className='offer-text'>
@@ -124,6 +126,12 @@ const Landing = () => {
 						<div className='slideshow-container'>
 							<div className='slideshow-overlay'></div>
 							<Slider
+								action={() => {
+									window.localStorage.setItem(
+										"Properties",
+										JSON.stringify(slideshowImg)
+									);
+								}}
 								sliderData={[
 									{
 										image: slideshowImg.first.image,

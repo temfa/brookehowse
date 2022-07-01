@@ -56,9 +56,11 @@ const Slider = (props) => {
 								<div className='content'>
 									<h2>{slide.heading}</h2>
 									<p>{slide.desc}</p>
-									<Button padding='20px 20px' bg='#bc9144'>
-										Learn More
-									</Button>
+									<a href='/property' onClick={props.action}>
+										<Button padding='20px 20px' bg='#bc9144'>
+											Learn More
+										</Button>
+									</a>
 								</div>
 							</div>
 						)}
