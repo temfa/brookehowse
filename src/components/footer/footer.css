@@ -106,10 +106,25 @@
 }
 
 .footer-copyright p {
-	font-size: 17px;
+	font-size: 14px;
+	opacity: 0.75;
 	font-weight: 400;
 	font-family: "Roboto", sans-serif;
 	line-height: 23px;
+}
+
+.footer-copyright p span {
+	opacity: 0.75;
+}
+
+.footer-copyright p a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-copyright p a:hover {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
 }
 
 @media screen and (max-width: 900px) {
