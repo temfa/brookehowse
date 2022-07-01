@@ -25,6 +25,8 @@ import Loader from "../../components/loader/loader";
 import Whatsapp from "../../assets/whatsapp.png";
 import VerticalSlants from "../../assets/vertical-slants.svg";
 import SquareSlants from "../../assets/square-slants.svg";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Landing = () => {
 	window.scrollTo(0, 0);
@@ -43,6 +45,7 @@ const Landing = () => {
 	}, []);
 	return (
 		<>
+			<ToastContainer />
 			{isLoaded ? (
 				<Loader />
 			) : (

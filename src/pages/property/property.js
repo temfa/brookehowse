@@ -20,7 +20,9 @@ import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
 import Whatsapp from "../../assets/whatsapp.png";
 // import Rectangle from "../../assets/Rectangle 29.png";
-import Slider from "../../components/slider/slider";
+// import Slider from "../../components/slider/slider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Property = () => {
 	window.scrollTo(0, 0);
@@ -49,6 +51,7 @@ const Property = () => {
 
 	return (
 		<>
+			<ToastContainer />
 			{isLoaded ? (
 				<Loader />
 			) : (

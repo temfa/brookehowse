@@ -18,7 +18,7 @@ const FormStyled = styled.div`
 	.form-group input {
 		border: none;
 		background-color: #fff;
-		padding: 24px 200px 24px 40px;
+		padding: 24px 0px 24px 40px;
 		width: 100%;
 		box-sizing: border-box;
 		outline: none;
