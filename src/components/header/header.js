@@ -77,7 +77,7 @@ const Header = ({ color }) => {
 			display: block;
 			padding: 19px 40px;
 			color: white;
-			font-size: 20px;
+			font-size: 17px;
 			font-weight: 300;
 			font-family: "Roboto", sans-serif;
 			line-height: 23px;
@@ -226,7 +226,10 @@ const Header = ({ color }) => {
 													"Properties",
 													JSON.stringify(item)
 												);
-												if (propertyData.length !== 1) {
+												if (
+													propertyData.length !== 1 &&
+													locationUrl.pathname === "/property"
+												) {
 													window.location.reload();
 												}
 											}}

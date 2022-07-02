@@ -3,7 +3,7 @@ import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
 import Rectangle from "../../assets/Rectangle 29.png";
 import House from "../../assets/Rectangle 25(1).png";
-import CEO from "../../assets/Rectangle 27.png";
+import CEO from "../../assets/Rectangle 27.jpg";
 import Mission from "../../assets/Rectangle 30(1).png";
 import Vision from "../../assets/Rectangle 31(1).png";
 import "./about.css";
