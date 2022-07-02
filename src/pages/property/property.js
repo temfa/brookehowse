@@ -23,9 +23,12 @@ import Whatsapp from "../../assets/whatsapp.png";
 // import Slider from "../../components/slider/slider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Property = () => {
-	window.scrollTo(0, 0);
+	// window.scrollTo(0, 0);
 	const tempPropertyData = localStorage.getItem("Properties");
 	const [properties] = useState(() => {
 		if (tempPropertyData === "undefined") {
@@ -49,6 +52,53 @@ const Property = () => {
 		});
 	}, []);
 
+	const sliderData = [
+		properties.first.image,
+		properties.second.descriptionOnePic,
+		properties.third.descriptionTwoPic,
+		properties.fourth.descriptionThreePic,
+		properties.fifth.amenitiesPic,
+	];
+	const [slideItem, setSlideItem] = useState(0);
+	useEffect(() => {}, [slideItem]);
+	let tempSliderData = [];
+	const settings = {
+		infinite: true,
+		centerPadding: "60px",
+		slidesToShow: 3,
+		swipeToSlide: true,
+		afterChange: function (index) {
+			console.log(
+				`Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+			);
+		},
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					swipeToSlide: true,
+					infinite: true,
+					dots: true,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					swipeToSlide: true,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					swipeToSlide: true,
+				},
+			},
+		],
+	};
+
 	return (
 		<>
 			<ToastContainer />
@@ -66,10 +116,6 @@ const Property = () => {
 										<p>{properties.first.location}</p>
 									</div>
 									<h2>{properties.first.propertyName}</h2>
-									<p>
-										Brookehowse Real Estate was established in 2011 and it's
-										presently based in Lagos state, Nigeria.
-									</p>
 								</div>
 								<div className='properties-header-img'>
 									{/* <img src={Rectangle} alt='rectangle' className='rectangle4' /> */}
@@ -83,39 +129,52 @@ const Property = () => {
 							</div>
 						</Container>
 					</div>
-					<PropertiesContainer>
-						<div className='properties-text'>
-							<p>{properties.second.descriptionOneText}</p>
-						</div>
-						<div className='properties-img'>
-							<Image
-								cloudName='temfad'
-								publicId={properties.second.descriptionOnePic}
-							/>
-						</div>
-					</PropertiesContainer>
-					<div className='properties-complex'>
-						<div className='complex-img'>
-							<Image
-								cloudName='temfad'
-								publicId={properties.third.descriptionTwoPic}
-							/>
-						</div>
-						<div className='complex-text'>
-							<p>{properties.third.descriptionTwoText}</p>
-						</div>
-					</div>
-					<PropertiesContainer>
-						<div className='properties-text'>
-							<p>{properties.fourth.descriptionThreeText}</p>
-						</div>
-						<div className='properties-img'>
-							<Image
-								cloudName='temfad'
-								publicId={properties.fourth.descriptionThreePic}
-							/>
-						</div>
-					</PropertiesContainer>
+					{properties.third.descriptionTwoText === "" ? (
+						<></>
+					) : (
+						<>
+							<PropertiesContainer>
+								<div className='properties-text'>
+									<p>{properties.second.descriptionOneText}</p>
+								</div>
+								<div className='properties-img'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.second.descriptionOnePic}
+									/>
+								</div>
+							</PropertiesContainer>
+							<div className='properties-complex'>
+								<div className='complex-img'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.third.descriptionTwoPic}
+									/>
+								</div>
+								<div className='complex-text'>
+									<p>{properties.third.descriptionTwoText}</p>
+								</div>
+							</div>
+							<PropertiesContainer>
+								<div className='properties-text'>
+									<p>{properties.fourth.descriptionThreeText}</p>
+									<p>
+										<span>Payment Terms</span>
+									</p>
+									<p>50% initial deposit, once offer is accepted</p>
+									<p>25% further payment, after 6 months of 1st payment</p>
+									<p>25% balance payment, after 6 months of 2nd payment</p>
+								</div>
+								<div className='properties-img'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.fourth.descriptionThreePic}
+									/>
+								</div>
+							</PropertiesContainer>
+						</>
+					)}
+
 					<div className='appointment'>
 						<div className='appointment-form'>
 							<Form title='Schedule an Appointment' size='45px' />
@@ -165,44 +224,59 @@ const Property = () => {
 						</div>
 					</div>
 
-					{/* <Container>
+					<Container>
 						<div className='explore-header'>
 							<h2>Explore Gallery</h2>
 							<div className='explore-header-img'>
-								<img src={ArrowLeft} alt='Arrow' />
-								<img src={ArrowRight} alt='Arrow' />
+								<img
+									src={ArrowLeft}
+									alt='Arrow'
+									onClick={(e) => {
+										// slickNext();
+									}}
+								/>
+								<img
+									src={ArrowRight}
+									alt='Arrow'
+									onClick={() => {
+										// slickPrevious();
+									}}
+								/>
 							</div>
 						</div>
-						<Slider
-							sliderData={[
-								{
-									image: properties.first.image,
-									heading: " ",
-									desc: "",
-								},
-								{
-									image: properties.second.descriptionOnePic,
-									heading: " ",
-									desc: "",
-								},
-								{
-									image: properties.third.descriptionTwoPic,
-									heading: " ",
-									desc: "",
-								},
-								{
-									image: properties.fourth.descriptionThreePic,
-									heading: " ",
-									desc: "",
-								},
-								{
-									image: properties.fifth.amenitiesPic,
-									heading: " ",
-									desc: "",
-								},
-							]}
-						/>
-					</Container> */}
+						<div className='explore-bodys'>
+							<Slider {...settings}>
+								<div className='gallery-cont'>
+									<Image cloudName='temfad' publicId={properties.first.image} />
+								</div>
+								<div className='gallery-cont'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.second.descriptionOnePic}
+									/>
+								</div>
+								<div className='gallery-cont'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.third.descriptionTwoPic}
+									/>
+								</div>
+								<div className='gallery-cont'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.fourth.descriptionThreePic}
+									/>
+								</div>
+								<div className='gallery-cont'>
+									<Image
+										cloudName='temfad'
+										publicId={properties.fifth.amenitiesPic}
+									/>
+								</div>
+							</Slider>
+						</div>
+					</Container>
+
 					<div className='whatsapp'>
 						<a
 							href='https://wa.me/+2348179461702'

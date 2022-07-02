@@ -36,7 +36,11 @@ const Landing = () => {
 		onValue(ref(db), (snapshot) => {
 			const data = snapshot.val();
 			if (data !== null) {
-				setSlideshowImg(Object.values(data.newProperty)[0]);
+				Object.values(data.newProperty).map((items) => {
+					if (items.first.propertyName === "Helen's Nest") {
+						setSlideshowImg(items);
+					}
+				});
 				setIsLoaded(false);
 			} else {
 				setIsLoaded(false);

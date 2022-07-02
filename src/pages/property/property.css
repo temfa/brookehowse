@@ -171,6 +171,30 @@
 	line-height: 113%;
 }
 
+.explore-bodys {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.explore-bodys .gallery-cont {
+	width: 100% !important;
+	height: 300px;
+}
+
+.gallery-cont img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slick-slide > div {
+	margin: 0 10px;
+}
+
+.slick-list {
+	margin: 0 -10px;
+}
+
 @media screen and (max-width: 1200px) {
 	.amenities {
 		padding: 100px 40px 100px 20px;
