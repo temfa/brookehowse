@@ -161,6 +161,11 @@
 	justify-content: space-between;
 	width: 100%;
 	margin-top: 100px;
+	align-items: center;
+}
+
+.explore-header-img img {
+	cursor: pointer;
 }
 
 .explore-header h2 {
@@ -277,5 +282,23 @@
 	.properties-complex {
 		flex-direction: column;
 		padding: 0px 20px;
+	}
+}
+
+@media screen and (max-width: 435px) {
+	.explore-header h2 {
+		font-size: 35px;
+	}
+}
+
+@media screen and (max-width: 365px) {
+	.explore-header h2 {
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 327px) {
+	.explore-header h2 {
+		font-size: 20px;
 	}
 }

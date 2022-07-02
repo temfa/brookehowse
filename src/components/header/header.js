@@ -75,7 +75,7 @@ const Header = ({ color }) => {
 
 		.dropdown-menu a {
 			display: block;
-			padding: 19px 40px;
+			padding: 19px 20px;
 			color: white;
 			font-size: 17px;
 			font-weight: 300;

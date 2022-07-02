@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
 import "./property.css";
@@ -52,16 +52,6 @@ const Property = () => {
 		});
 	}, []);
 
-	const sliderData = [
-		properties.first.image,
-		properties.second.descriptionOnePic,
-		properties.third.descriptionTwoPic,
-		properties.fourth.descriptionThreePic,
-		properties.fifth.amenitiesPic,
-	];
-	const [slideItem, setSlideItem] = useState(0);
-	useEffect(() => {}, [slideItem]);
-	let tempSliderData = [];
 	const settings = {
 		infinite: true,
 		centerPadding: "60px",
@@ -98,6 +88,7 @@ const Property = () => {
 			},
 		],
 	};
+	const change = useRef(null);
 
 	return (
 		<>
@@ -129,21 +120,21 @@ const Property = () => {
 							</div>
 						</Container>
 					</div>
+					<PropertiesContainer>
+						<div className='properties-text'>
+							<p>{properties.second.descriptionOneText}</p>
+						</div>
+						<div className='properties-img'>
+							<Image
+								cloudName='temfad'
+								publicId={properties.second.descriptionOnePic}
+							/>
+						</div>
+					</PropertiesContainer>
 					{properties.third.descriptionTwoText === "" ? (
 						<></>
 					) : (
 						<>
-							<PropertiesContainer>
-								<div className='properties-text'>
-									<p>{properties.second.descriptionOneText}</p>
-								</div>
-								<div className='properties-img'>
-									<Image
-										cloudName='temfad'
-										publicId={properties.second.descriptionOnePic}
-									/>
-								</div>
-							</PropertiesContainer>
 							<div className='properties-complex'>
 								<div className='complex-img'>
 									<Image
@@ -172,57 +163,56 @@ const Property = () => {
 									/>
 								</div>
 							</PropertiesContainer>
+							<div className='appointment'>
+								<div className='appointment-form'>
+									<Form title='Schedule an Appointment' size='45px' />
+								</div>
+								<div className='amenities'>
+									<h2>Amenities</h2>
+									<div className='amenities-body'>
+										<div>
+											<div className='amenities-img'>
+												<img src={Swimming} alt='swimming' />
+											</div>
+											<p>Swimming pool</p>
+										</div>
+										<div>
+											<div className='amenities-img'>
+												<img src={Network} alt='Network' />
+											</div>
+											<p>Good road network</p>
+										</div>
+										<div>
+											<div className='amenities-img'>
+												<img src={Power} alt='Power' />
+											</div>
+											<p className='power'>24/7 Power supply</p>
+										</div>
+									</div>
+									<div className='amenities-body'>
+										<div>
+											<div className='amenities-img'>
+												<img src={Game} alt='swimming' />
+											</div>
+											<p>Access Control</p>
+										</div>
+										<div>
+											<div className='amenities-img'>
+												<img src={Cinema} alt='Network' />
+											</div>
+											<p>Cinema room</p>
+										</div>
+										<div>
+											<div className='amenities-img'>
+												<img src={Camera} alt='Power' />
+											</div>
+											<p>Surveillance camera</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</>
 					)}
-
-					<div className='appointment'>
-						<div className='appointment-form'>
-							<Form title='Schedule an Appointment' size='45px' />
-						</div>
-						<div className='amenities'>
-							<h2>Amenities</h2>
-							<div className='amenities-body'>
-								<div>
-									<div className='amenities-img'>
-										<img src={Swimming} alt='swimming' />
-									</div>
-									<p>Swimming pool</p>
-								</div>
-								<div>
-									<div className='amenities-img'>
-										<img src={Network} alt='Network' />
-									</div>
-									<p>Good road network</p>
-								</div>
-								<div>
-									<div className='amenities-img'>
-										<img src={Power} alt='Power' />
-									</div>
-									<p className='power'>24/7 Power supply</p>
-								</div>
-							</div>
-							<div className='amenities-body'>
-								<div>
-									<div className='amenities-img'>
-										<img src={Game} alt='swimming' />
-									</div>
-									<p>Game room</p>
-								</div>
-								<div>
-									<div className='amenities-img'>
-										<img src={Cinema} alt='Network' />
-									</div>
-									<p>Cinema room</p>
-								</div>
-								<div>
-									<div className='amenities-img'>
-										<img src={Camera} alt='Power' />
-									</div>
-									<p>Surveillance camera</p>
-								</div>
-							</div>
-						</div>
-					</div>
 
 					<Container>
 						<div className='explore-header'>
@@ -231,21 +221,21 @@ const Property = () => {
 								<img
 									src={ArrowLeft}
 									alt='Arrow'
-									onClick={(e) => {
-										// slickNext();
+									onClick={() => {
+										change.current.slickPrev();
 									}}
 								/>
 								<img
 									src={ArrowRight}
 									alt='Arrow'
 									onClick={() => {
-										// slickPrevious();
+										change.current.slickNext();
 									}}
 								/>
 							</div>
 						</div>
 						<div className='explore-bodys'>
-							<Slider {...settings}>
+							<Slider ref={change} {...settings}>
 								<div className='gallery-cont'>
 									<Image cloudName='temfad' publicId={properties.first.image} />
 								</div>
