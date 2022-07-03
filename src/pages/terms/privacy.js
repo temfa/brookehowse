@@ -196,7 +196,7 @@ const Privacy = () => {
 				<p>
 					Brookehowse welcomes your comments regarding this Statement of
 					Privacy. If you believe that Brookehowse has not adhered to this
-					Statement, please contact us at info@brookehowse.com. We will use
+					Statement, please contact us at info@brookehowseestate.com. We will use
 					commercially reasonable efforts to promptly determine and remedy the
 					problem.
 				</p>

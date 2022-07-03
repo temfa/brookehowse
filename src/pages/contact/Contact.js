@@ -44,7 +44,7 @@ const Contact = () => {
 										15A, Ogbunike Street, Off Wole Olateju Crescent, Off
 										Admiralty Way, Lekki Phase 1, Lagos
 									</p>
-									<p className='mail'>info@brookehowse.com</p>
+									<p className='mail'>info@brookehowseestate.com</p>
 									<p className='phone'>+234-01-2716885</p>
 									<div className='social-icons'>
 										<img src={Twitter} alt='Twitter' />
