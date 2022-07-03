@@ -184,6 +184,7 @@
 .explore-bodys .gallery-cont {
 	width: 100% !important;
 	height: 300px;
+	cursor: pointer;
 }
 
 .gallery-cont img {
@@ -198,6 +199,10 @@
 
 .slick-list {
 	margin: 0 -10px;
+}
+
+.slick-arrow {
+	display: none !important;
 }
 
 @media screen and (max-width: 1200px) {

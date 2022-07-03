@@ -19,13 +19,13 @@ import { db } from "../../utils/firebase-config";
 import { ref, onValue } from "firebase/database";
 import Loader from "../../components/loader/loader";
 import Whatsapp from "../../assets/whatsapp.png";
-// import Rectangle from "../../assets/Rectangle 29.png";
-// import Slider from "../../components/slider/slider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 const Property = () => {
 	// window.scrollTo(0, 0);
@@ -51,6 +51,14 @@ const Property = () => {
 			}
 		});
 	}, []);
+
+	const galleryDetails = [
+		properties.first.image,
+		properties.second.descriptionOnePic,
+		properties.third.descriptionTwoPic,
+		properties.fourth.descriptionThreePic,
+		properties.fifth.amenitiesPic,
+	];
 
 	const settings = {
 		infinite: true,
@@ -88,7 +96,11 @@ const Property = () => {
 			},
 		],
 	};
+
 	const change = useRef(null);
+	const [photoIndex, setPhotoIndex] = useState(0);
+	const [isOpen, setIsOpen] = useState(false);
+	useEffect(() => {}, [photoIndex]);
 
 	return (
 		<>
@@ -236,36 +248,49 @@ const Property = () => {
 						</div>
 						<div className='explore-bodys'>
 							<Slider ref={change} {...settings}>
-								<div className='gallery-cont'>
-									<Image cloudName='temfad' publicId={properties.first.image} />
-								</div>
-								<div className='gallery-cont'>
-									<Image
-										cloudName='temfad'
-										publicId={properties.second.descriptionOnePic}
-									/>
-								</div>
-								<div className='gallery-cont'>
-									<Image
-										cloudName='temfad'
-										publicId={properties.third.descriptionTwoPic}
-									/>
-								</div>
-								<div className='gallery-cont'>
-									<Image
-										cloudName='temfad'
-										publicId={properties.fourth.descriptionThreePic}
-									/>
-								</div>
-								<div className='gallery-cont'>
-									<Image
-										cloudName='temfad'
-										publicId={properties.fifth.amenitiesPic}
-									/>
-								</div>
+								{galleryDetails.map((items, index) => {
+									return (
+										<div
+											className='gallery-cont'
+											key={index}
+											onClick={() => {
+												setPhotoIndex(index);
+												setIsOpen(true);
+											}}>
+											<Image cloudName='temfad' publicId={items} />
+										</div>
+									);
+								})}
 							</Slider>
 						</div>
 					</Container>
+					{isOpen && (
+						<Lightbox
+							mainSrc={galleryDetails[photoIndex]}
+							nextSrc={galleryDetails[(photoIndex + 1) % galleryDetails.length]}
+							prevSrc={
+								galleryDetails[
+									(photoIndex + galleryDetails.length - 1) %
+										galleryDetails.length
+								]
+							}
+							onCloseRequest={() => setIsOpen(false)}
+							onMovePrevRequest={() => {
+								if (photoIndex === 0) {
+									setPhotoIndex(galleryDetails.length - 1);
+								} else {
+									setPhotoIndex(photoIndex - 1);
+								}
+							}}
+							onMoveNextRequest={() => {
+								if (photoIndex === galleryDetails.length - 1) {
+									setPhotoIndex(0);
+								} else {
+									setPhotoIndex(photoIndex + 1);
+								}
+							}}
+						/>
+					)}
 
 					<div className='whatsapp'>
 						<a
