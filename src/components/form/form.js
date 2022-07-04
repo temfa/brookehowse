@@ -18,10 +18,10 @@ const Form = (props) => {
 		setLoader(true);
 		emailjs
 			.sendForm(
-				"service_yrziodf",
-				"template_2vekr4y",
+				"service_xdoq4zx",
+				"template_kcvcl7q",
 				mailform.current,
-				"user_FaGRmNGxIu6XlKUy68tnB"
+				"CF5KGa-9bxQqAUVbZ"
 			)
 			.then(
 				() => {

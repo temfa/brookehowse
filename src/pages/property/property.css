@@ -251,7 +251,7 @@
 	}
 
 	.appointment {
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 
 	.appointment-form {
