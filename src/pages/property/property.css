@@ -152,6 +152,33 @@
 	font-family: "Roboto", sans-serif;
 }
 
+.amenities-bodys {
+	display: flex;
+	justify-content: space-between;
+	width: 55%;
+	margin-top: 74px;
+}
+
+.amenities-bodys div {
+	width: 20%;
+}
+
+.amenities-bodys .amenities-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.amenities-bodys div p {
+	color: white;
+	margin-top: 26px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+}
+
 .amenities-body .power {
 	margin-top: 5px;
 }
@@ -275,11 +302,22 @@
 		margin-top: 20px;
 	}
 
+	.amenities-bodys {
+		flex-direction: column;
+		width: 100%;
+		margin-top: 20px;
+	}
+
 	.amenities h2 {
 		text-align: center;
 	}
 
 	.amenities-body div {
+		width: 100%;
+		margin: 15px 0px;
+	}
+
+	.amenities-bodys div {
 		width: 100%;
 		margin: 15px 0px;
 	}

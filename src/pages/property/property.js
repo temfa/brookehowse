@@ -4,11 +4,11 @@ import Container from "../../components/styles/Container.styled";
 import "./property.css";
 import Location from "../../assets/Group.png";
 import Swimming from "../../assets/Group 431.png";
-import Game from "../../assets/Group 432.png";
+import Access from "../../assets/Group 446.png";
 import Network from "../../assets/Vector(9).png";
 import ArrowLeft from "../../assets/Vector(10).png";
 import ArrowRight from "../../assets/Vector(11).png";
-import Cinema from "../../assets/Vector(7).png";
+import Cinema from "../../assets/Group 447.png";
 import Camera from "../../assets/Vector(6).png";
 import Power from "../../assets/Vector(8).png";
 import PropertiesContainer from "../../components/styles/Propeties.styled";
@@ -184,9 +184,9 @@ const Property = () => {
 									<div className='amenities-body'>
 										<div>
 											<div className='amenities-img'>
-												<img src={Swimming} alt='swimming' />
+												<img src={Camera} alt='Power' />
 											</div>
-											<p>Swimming pool</p>
+											<p>Surveillance camera</p>
 										</div>
 										<div>
 											<div className='amenities-img'>
@@ -201,10 +201,10 @@ const Property = () => {
 											<p className='power'>24/7 Power supply</p>
 										</div>
 									</div>
-									<div className='amenities-body'>
+									<div className='amenities-bodys'>
 										<div>
 											<div className='amenities-img'>
-												<img src={Game} alt='swimming' />
+												<img src={Access} alt='swimming' />
 											</div>
 											<p>Access Control</p>
 										</div>
@@ -212,13 +212,7 @@ const Property = () => {
 											<div className='amenities-img'>
 												<img src={Cinema} alt='Network' />
 											</div>
-											<p>Cinema room</p>
-										</div>
-										<div>
-											<div className='amenities-img'>
-												<img src={Camera} alt='Power' />
-											</div>
-											<p>Surveillance camera</p>
+											<p>Children's Park</p>
 										</div>
 									</div>
 								</div>
