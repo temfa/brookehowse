@@ -79,7 +79,7 @@ const Catalog = () => {
 							return (
 								<div className='catalog-img' key={key}>
 									<Image
-										cloudName='temfad'
+										cloudName='brookehowse'
 										publicId={items.first.image}
 										className='pictures'
 									/>

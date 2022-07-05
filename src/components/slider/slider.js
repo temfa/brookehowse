@@ -49,7 +49,7 @@ const Slider = (props) => {
 							<div className='slide-container'>
 								<div className='slide-overlay'></div>
 								<Image
-									cloudName='temfad'
+									cloudName='brookehowse'
 									publicId={slide.image}
 									className='image'
 								/>

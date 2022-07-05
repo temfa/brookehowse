@@ -49,7 +49,7 @@ const FirstNew = () => {
 				<div>
 					{uploadImage1 ? (
 						<div className='new-body-img'>
-							<Image cloudName='temfad' publicId={uploadImage1} />
+							<Image cloudName='brookehowse' publicId={uploadImage1} />
 						</div>
 					) : (
 						uploadImage && (
@@ -87,7 +87,7 @@ const FirstNew = () => {
 										setIsLoaded(true);
 										try {
 											const response = await axios.post(
-												"https://api.cloudinary.com/v1_1/temfad/upload",
+												"https://api.cloudinary.com/v1_1/brookehowse/upload",
 												formData
 											);
 											setUploadImage1(response.data.secure_url);

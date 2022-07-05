@@ -73,7 +73,7 @@ const FifthNew = () => {
 				<div>
 					{uploadImage5 ? (
 						<div className='new-body-img'>
-							<Image cloudName='temfad' publicId={uploadImage5} />
+							<Image cloudName='brookehowse' publicId={uploadImage5} />
 						</div>
 					) : (
 						uploadImage && (
@@ -111,7 +111,7 @@ const FifthNew = () => {
 										setIsLoaded(true);
 										try {
 											const response = await axios.post(
-												"https://api.cloudinary.com/v1_1/temfad/upload",
+												"https://api.cloudinary.com/v1_1/brookehowse/upload",
 												formData
 											);
 											setUploadImage5(response.data.secure_url);
@@ -231,7 +231,7 @@ const FifthNew = () => {
 						onClick={async () => {
 							try {
 								const response = await axios.post(
-									"https://api.cloudinary.com/v1_1/temfad/upload",
+									"https://api.cloudinary.com/v1_1/brookehowse/upload",
 									formIcon
 								);
 								setUploadIcon(response.data.secure_url);
@@ -245,7 +245,7 @@ const FifthNew = () => {
 					</button>
 					<button
 						onClick={() => {
-							set(ref(db, `newAmenities/ ${iconName}`), {
+							set(ref(db, `newAmenity/ ${iconName}`), {
 								amenityName: iconName,
 								amenityIcon: uploadIcon,
 							});

@@ -120,7 +120,7 @@ const Property = () => {
 									{/* <img src={Rectangle} alt='rectangle' className='rectangle4' /> */}
 									<div>
 										<Image
-											cloudName='temfad'
+											cloudName='brookehowse'
 											publicId={properties.first.image}
 										/>
 									</div>
@@ -134,7 +134,7 @@ const Property = () => {
 						</div>
 						<div className='properties-img'>
 							<Image
-								cloudName='temfad'
+								cloudName='brookehowse'
 								publicId={properties.second.descriptionOnePic}
 							/>
 						</div>
@@ -144,13 +144,13 @@ const Property = () => {
 							<div className='image-show'>
 								<div>
 									<Image
-										cloudName='temfad'
+										cloudName='brookehowse'
 										publicId={properties.third.descriptionTwoPic}
 									/>
 								</div>
 								<div>
 									<Image
-										cloudName='temfad'
+										cloudName='brookehowse'
 										publicId={properties.fourth.descriptionThreePic}
 									/>
 								</div>
@@ -161,7 +161,7 @@ const Property = () => {
 							<div className='properties-complex'>
 								<div className='complex-img'>
 									<Image
-										cloudName='temfad'
+										cloudName='brookehowse'
 										publicId={properties.third.descriptionTwoPic}
 									/>
 								</div>
@@ -181,7 +181,7 @@ const Property = () => {
 								</div>
 								<div className='properties-img'>
 									<Image
-										cloudName='temfad'
+										cloudName='brookehowse'
 										publicId={properties.fourth.descriptionThreePic}
 									/>
 								</div>
@@ -199,7 +199,10 @@ const Property = () => {
 									return (
 										<div key={key} className='amenities-cont'>
 											<div className='amenities-img'>
-												<Image cloudName='temfad' publicId={item.amenityIcon} />
+												<Image
+													cloudName='brookehowse'
+													publicId={item.amenityIcon}
+												/>
 											</div>
 											<p
 												className={
@@ -247,7 +250,7 @@ const Property = () => {
 												setPhotoIndex(index);
 												setIsOpen(true);
 											}}>
-											<Image cloudName='temfad' publicId={items} />
+											<Image cloudName='brookehowse' publicId={items} />
 										</div>
 									);
 								})}
