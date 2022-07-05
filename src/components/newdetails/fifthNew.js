@@ -6,21 +6,44 @@ import Loader from "../loader/loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Image } from "cloudinary-react";
+import { db } from "../../utils/firebase-config";
+import { ref, set, onValue } from "firebase/database";
 
 const FifthNew = () => {
+	// const [uploadIcon, setUploadIcon] = useState("");
+	// const [iconName, setIconName] = useState("");
+	// const formIcon = new FormData();
+	// formIcon.append("file", uploadIcon);
+	// formIcon.append("upload_preset", "brookehowse");
+
+	const [amenitiesData, setAmenitiesData] = useState("");
+
+	useEffect(() => {
+		onValue(ref(db), (snapshot) => {
+			const data = snapshot.val();
+			if (data !== null) {
+				setAmenitiesData(Object.values(data.newAmenities));
+			}
+			console.log(amenitiesData);
+		});
+	}, []);
+
 	const [uploadImage, setUploadImage] = useState("");
 	const [isLoaded, setIsLoaded] = useState(false);
 	const amenitiesDetails = localStorage.getItem("Amenities");
-	const [amenities, setAmenities] = useState("");
-	const [amenitiesDetail, setAmenitiesDetail] = useState(() => {
-		if (amenitiesDetails === "undefined") {
-			return [];
-		} else if (amenitiesDetails === null) {
-			return [];
-		} else {
-			return JSON.parse(amenitiesDetails);
-		}
-	});
+	// const [amenitiesDetail, setAmenitiesDetail] = useState(() => {
+	// 	if (amenitiesDetails === "undefined") {
+	// 		return [];
+	// 	} else if (amenitiesDetails === null) {
+	// 		return [];
+	// 	} else {
+	// 		return JSON.parse(amenitiesDetails);
+	// 	}
+	// });
+
+	const [amenitiesDetail, setAmenitiesDetail] = useState([]);
+
+	useEffect(() => {}, [amenitiesDetail]);
 	const {
 		setUploadImage5,
 		uploadButton5,
@@ -32,6 +55,7 @@ const FifthNew = () => {
 	const formData = new FormData();
 	formData.append("file", uploadImage);
 	formData.append("upload_preset", "brookehowse");
+
 	const editProperty = localStorage.getItem("editProperty");
 	const editPropertyCont = JSON.parse(editProperty);
 	useEffect(() => {
@@ -110,13 +134,43 @@ const FifthNew = () => {
 					<p>
 						Amenities <span>(max of 6)</span>
 					</p>
-					<form
+					<div className='amenities-wrapper'>
+						{amenitiesData &&
+							amenitiesData?.map((item, key) => {
+								return (
+									<div className='amenity-wrapper' key={key}>
+										<div>
+											<input
+												type='checkbox'
+												onChange={(e) => {
+													if (e.target.checked) {
+														let tempAmenitiesDetails = [
+															...amenitiesDetail,
+															item,
+														];
+														setAmenitiesDetail(tempAmenitiesDetails);
+														setLatestAmenitiesDetail(tempAmenitiesDetails);
+													} else {
+														let temp = amenitiesDetail.splice(key, 1);
+														setAmenitiesDetail(temp);
+														setLatestAmenitiesDetail(temp);
+													}
+													console.log(amenitiesDetail);
+												}}
+											/>
+											<p>{item.amenityName}</p>
+										</div>
+									</div>
+								);
+							})}
+					</div>
+					{/* <form
 						onSubmit={(e) => {
 							e.preventDefault();
 							if (amenitiesDetail === null) {
 								setAmenitiesDetail(amenitiesDetail);
 							} else if (amenitiesDetail.length === 6) {
-								alert("You cannot add more than six amenities");
+								toast.error("You cannot add more than six amenities");
 								setAmenities("");
 							} else {
 								let tempAmenitiesDetails = [...amenitiesDetail, amenities];
@@ -136,8 +190,8 @@ const FifthNew = () => {
 								setAmenities(e.target.value);
 							}}
 						/>
-					</form>
-					<div className='amenities-detail'>
+					</form> */}
+					{/* <div className='amenities-detail'>
 						{amenitiesDetail?.map((el, key, index) => {
 							return (
 								<div
@@ -154,8 +208,53 @@ const FifthNew = () => {
 								</div>
 							);
 						})}
-					</div>
+					</div> */}
 				</div>
+				{/* <div>
+					<label className='new-label'>
+						<input
+							type='file'
+							onChange={(e) => {
+								setUploadIcon(e.target.files[0]);
+							}}
+						/>
+						Change Image
+					</label>
+					<input
+						type='text'
+						value={iconName}
+						onChange={(e) => {
+							setIconName(e.target.value);
+						}}
+					/>
+					<button
+						onClick={async () => {
+							try {
+								const response = await axios.post(
+									"https://api.cloudinary.com/v1_1/temfad/upload",
+									formIcon
+								);
+								setUploadIcon(response.data.secure_url);
+
+								toast.success("Amenities Updated Successfully!!!!");
+							} catch (error) {
+								toast.error(error.message);
+							}
+						}}>
+						Submit
+					</button>
+					<button
+						onClick={() => {
+							set(ref(db, `newAmenities/ ${iconName}`), {
+								amenityName: iconName,
+								amenityIcon: uploadIcon,
+							});
+							toast.success("Amenities Updated Successfully!!!!");
+							setIconName("");
+						}}>
+						Upload
+					</button>
+				</div> */}
 			</div>
 		</>
 	);

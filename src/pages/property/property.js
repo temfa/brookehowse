@@ -3,14 +3,8 @@ import Header from "../../components/header/header";
 import Container from "../../components/styles/Container.styled";
 import "./property.css";
 import Location from "../../assets/Group.png";
-import Swimming from "../../assets/Group 431.png";
-import Access from "../../assets/Group 446.png";
-import Network from "../../assets/Vector(9).png";
 import ArrowLeft from "../../assets/Vector(10).png";
 import ArrowRight from "../../assets/Vector(11).png";
-import Cinema from "../../assets/Group 447.png";
-import Camera from "../../assets/Vector(6).png";
-import Power from "../../assets/Vector(8).png";
 import PropertiesContainer from "../../components/styles/Propeties.styled";
 import Footer from "../../components/footer/footer";
 import Form from "../../components/form/form";
@@ -44,6 +38,7 @@ const Property = () => {
 	useEffect(() => {
 		onValue(ref(db), (snapshot) => {
 			const data = snapshot.val();
+			// console.log(data);
 			if (data !== null) {
 				setIsLoaded(false);
 			} else {
@@ -51,6 +46,7 @@ const Property = () => {
 			}
 		});
 	}, []);
+	console.log(properties);
 
 	const galleryDetails = [
 		properties.first.image,
@@ -175,50 +171,35 @@ const Property = () => {
 									/>
 								</div>
 							</PropertiesContainer>
-							<div className='appointment'>
-								<div className='appointment-form'>
-									<Form title='Schedule an Appointment' size='45px' />
-								</div>
-								<div className='amenities'>
-									<h2>Amenities</h2>
-									<div className='amenities-body'>
-										<div>
-											<div className='amenities-img'>
-												<img src={Camera} alt='Power' />
-											</div>
-											<p>Surveillance camera</p>
-										</div>
-										<div>
-											<div className='amenities-img'>
-												<img src={Network} alt='Network' />
-											</div>
-											<p>Good road network</p>
-										</div>
-										<div>
-											<div className='amenities-img'>
-												<img src={Power} alt='Power' />
-											</div>
-											<p className='power'>24/7 Power supply</p>
-										</div>
-									</div>
-									<div className='amenities-bodys'>
-										<div>
-											<div className='amenities-img'>
-												<img src={Access} alt='swimming' />
-											</div>
-											<p>Access Control</p>
-										</div>
-										<div>
-											<div className='amenities-img'>
-												<img src={Cinema} alt='Network' />
-											</div>
-											<p>Children's Park</p>
-										</div>
-									</div>
-								</div>
-							</div>
 						</>
 					)}
+					<div className='appointment'>
+						<div className='appointment-form'>
+							<Form title='Schedule an Appointment' size='45px' />
+						</div>
+						<div className='amenities'>
+							<h2>Amenities</h2>
+							<div className='amenities-body'>
+								{properties.fifth.amenities?.map((item, key) => {
+									return (
+										<div key={key} className='amenities-cont'>
+											<div className='amenities-img'>
+												<Image cloudName='temfad' publicId={item.amenityIcon} />
+											</div>
+											<p
+												className={
+													item.amenityName === "24 Hours Power Supply"
+														? "power"
+														: ""
+												}>
+												{item.amenityName}
+											</p>
+										</div>
+									);
+								})}
+							</div>
+						</div>
+					</div>
 
 					<Container>
 						<div className='explore-header'>

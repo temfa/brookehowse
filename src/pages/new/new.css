@@ -96,6 +96,7 @@ input[type="file"] {
 	height: 250px;
 	padding-left: 30px;
 	padding-top: 30px;
+	overflow: scroll;
 }
 
 .new-amenities p {
@@ -110,14 +111,14 @@ input[type="file"] {
 	font-style: italic;
 }
 
-.new-amenities input {
+/* .new-amenities input {
 	width: 93%;
 	box-sizing: border-box;
 	padding: 13px 0px 13px 21px;
 	outline: none;
 	border: 1px solid #cccccc;
 	margin-top: 20px;
-}
+} */
 
 .amenities-detail div {
 	background-color: #bc9144;
@@ -144,6 +145,29 @@ input[type="file"] {
 .amenities-detail div:first-child,
 .amenities-detail div:nth-child(4) {
 	margin-left: 0px;
+}
+
+.amenities-wrapper {
+	width: 100%;
+	/* display: flex; */
+	box-sizing: border-box;
+}
+
+.amenity-wrapper {
+	/* background-color: #bc9144; */
+	width: 100%;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.amenity-wrapper div {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.amenity-wrapper div p {
+	margin-left: 20px;
 }
 
 .upload-btns button {

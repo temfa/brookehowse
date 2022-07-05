@@ -125,15 +125,19 @@
 }
 
 .amenities-body {
-	display: flex;
+	/* display: flex;
+	flex-direction: column; */
 	/* align-items: center; */
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	width: 100%;
 	margin-top: 74px;
 }
 
-.amenities-body div {
-	width: 20%;
+.amenities-body .amenities-cont {
+	width: 27%;
+	display: inline-block;
+	margin-left: 25px;
+	margin-top: 40px;
 }
 
 .amenities-body .amenities-img {
@@ -144,33 +148,6 @@
 }
 
 .amenities-body div p {
-	color: white;
-	margin-top: 26px;
-	text-align: center;
-	font-size: 16px;
-	font-weight: 400;
-	font-family: "Roboto", sans-serif;
-}
-
-.amenities-bodys {
-	display: flex;
-	justify-content: space-between;
-	width: 55%;
-	margin-top: 74px;
-}
-
-.amenities-bodys div {
-	width: 20%;
-}
-
-.amenities-bodys .amenities-img {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-
-.amenities-bodys div p {
 	color: white;
 	margin-top: 26px;
 	text-align: center;
@@ -300,12 +277,7 @@
 		flex-direction: column;
 		width: 100%;
 		margin-top: 20px;
-	}
-
-	.amenities-bodys {
-		flex-direction: column;
-		width: 100%;
-		margin-top: 20px;
+		display: flex;
 	}
 
 	.amenities h2 {
