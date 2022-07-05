@@ -22,7 +22,7 @@ const FifthNew = () => {
 		onValue(ref(db), (snapshot) => {
 			const data = snapshot.val();
 			if (data !== null) {
-				setAmenitiesData(Object.values(data.newAmenities));
+				setAmenitiesData(Object.values(data.newAmenity));
 			}
 			console.log(amenitiesData);
 		});
