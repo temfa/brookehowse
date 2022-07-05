@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const PropertiesContainer = styled.div`
 	display: flex;
-	margin: 200px 0px 200px 120px;
+	margin: 200px 0px 100px 120px;
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: space-between;
