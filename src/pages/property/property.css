@@ -94,6 +94,22 @@
 	line-height: 250%;
 }
 
+.image-show {
+	width: 100%;
+	display: flex;
+	box-sizing: border-box;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.image-show div {
+	width: 48%;
+}
+
+.image-show div img {
+	width: 100%;
+}
+
 .appointment {
 	display: flex;
 	box-sizing: border-box;
@@ -267,6 +283,15 @@
 	.properties-header-img,
 	.properties-header-text {
 		width: 100%;
+	}
+
+	.image-show {
+		flex-direction: column;
+	}
+
+	.image-show div {
+		width: 100%;
+		margin-top: 20px;
 	}
 }
 

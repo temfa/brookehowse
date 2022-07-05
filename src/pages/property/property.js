@@ -140,7 +140,22 @@ const Property = () => {
 						</div>
 					</PropertiesContainer>
 					{properties.third.descriptionTwoText === "" ? (
-						<></>
+						<Container>
+							<div className='image-show'>
+								<div>
+									<Image
+										cloudName='temfad'
+										publicId={properties.third.descriptionTwoPic}
+									/>
+								</div>
+								<div>
+									<Image
+										cloudName='temfad'
+										publicId={properties.fourth.descriptionThreePic}
+									/>
+								</div>
+							</div>
+						</Container>
 					) : (
 						<>
 							<div className='properties-complex'>
