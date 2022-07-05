@@ -215,7 +215,7 @@
 	}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1108px) {
 	.appointment-form {
 		padding: 100px 40px 100px 20px;
 	}
@@ -241,19 +241,7 @@
 	}
 }
 
-@media screen and (max-width: 650px) {
-	.appointment-form {
-		padding: 100px 40px 100px 0px;
-	}
-	.properties-header {
-		flex-direction: column-reverse;
-	}
-
-	.properties-header-img,
-	.properties-header-text {
-		width: 100%;
-	}
-
+@media screen and (max-width: 908px) {
 	.appointment {
 		flex-direction: column-reverse;
 	}
@@ -268,7 +256,21 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
+	.appointment-form {
+		padding: 100px 40px 100px 0px;
+	}
+	.properties-header {
+		flex-direction: column-reverse;
+	}
+
+	.properties-header-img,
+	.properties-header-text {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 560px) {
 	.amenities {
 		padding: 0px 0px;
 	}
@@ -284,12 +286,7 @@
 		text-align: center;
 	}
 
-	.amenities-body div {
-		width: 100%;
-		margin: 15px 0px;
-	}
-
-	.amenities-bodys div {
+	.amenities-body .amenities-cont {
 		width: 100%;
 		margin: 15px 0px;
 	}
