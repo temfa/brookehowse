@@ -51,6 +51,7 @@
 	line-height: 145%;
 	margin: 0px;
 	margin-top: 30px;
+	width: 75%;
 }
 
 .welcome-text button {
@@ -350,8 +351,12 @@
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
 	.offer-conts .offer-single {
 		width: 70%;
+	}
+
+	.welcome-text p {
+		width: 100%;
 	}
 }

@@ -62,16 +62,12 @@ const Landing = () => {
 								<div className='welcome-container'>
 									<div className='welcome-text'>
 										<h2>
-											Smart apartments that connects people with their dreams
+											Smart apartments that connect people with their dreams
 										</h2>
 										<p>
-											We offer real estate services with world-class
-											professionalism with the
-											<span>
-												<br />
-												aim to give you comfort, luxury an affordable
-												accommodation.
-											</span>
+											We offer real estate services with world-class 
+											professionalism, aimed at providing comfort, 
+											luxury and affordable accommodation.
 										</p>
 										<a href='#offer'>
 											<Button padding='28px 41px' bg='#bc9144'>
@@ -104,7 +100,7 @@ const Landing = () => {
 										<div className='single-offer'>
 											<img src={Vector} alt='Vector' />
 										</div>
-										<h4>Property Devlopment</h4>
+										<h4>Property Development</h4>
 									</div>
 									<div className='offer-single'>
 										<div className='single-offer'>
