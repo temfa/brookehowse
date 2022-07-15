@@ -188,37 +188,6 @@ const Property = () => {
 							</PropertiesContainer>
 						</>
 					)}
-					<div className='appointment'>
-						<div className='appointment-form'>
-							<Form title='Schedule an Appointment' size='45px' />
-						</div>
-						<div className='amenities'>
-							<h2>Amenities</h2>
-							<div className='amenities-body'>
-								{properties.fifth.amenities?.map((item, key) => {
-									return (
-										<div key={key} className='amenities-cont'>
-											<div className='amenities-img'>
-												<Image
-													cloudName='brookehowse'
-													publicId={item.amenityIcon}
-												/>
-											</div>
-											<p
-												className={
-													item.amenityName === "24 Hours Power Supply"
-														? "power"
-														: ""
-												}>
-												{item.amenityName}
-											</p>
-										</div>
-									);
-								})}
-							</div>
-						</div>
-					</div>
-
 					<Container>
 						<div className='explore-header'>
 							<h2>Explore Gallery</h2>
@@ -284,7 +253,36 @@ const Property = () => {
 							}}
 						/>
 					)}
-
+					<div className='appointment'>
+						<div className='appointment-form'>
+							<Form title='Schedule an Appointment' size='45px' />
+						</div>
+						<div className='amenities'>
+							<h2>Amenities</h2>
+							<div className='amenities-body'>
+								{properties.fifth.amenities?.map((item, key) => {
+									return (
+										<div key={key} className='amenities-cont'>
+											<div className='amenities-img'>
+												<Image
+													cloudName='brookehowse'
+													publicId={item.amenityIcon}
+												/>
+											</div>
+											<p
+												className={
+													item.amenityName === "24 Hours Power Supply"
+														? "power"
+														: ""
+												}>
+												{item.amenityName}
+											</p>
+										</div>
+									);
+								})}
+							</div>
+						</div>
+					</div>
 					<div className='whatsapp'>
 						<a
 							href='https://wa.me/+2348179461702'

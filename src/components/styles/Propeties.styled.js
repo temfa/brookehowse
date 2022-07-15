@@ -33,7 +33,7 @@ const PropertiesContainer = styled.div`
 	}
 
 	@media screen and (max-width: 1000px) {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		margin: 50px;
 
 		.properties-text,
