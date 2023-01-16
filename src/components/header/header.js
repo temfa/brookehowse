@@ -190,13 +190,7 @@ const Header = ({ color }) => {
   return (
     <HeaderStyle color={color}>
       <div className="header-logo">
-        {locationUrl.pathname === "/terms" ? (
-          <img src={Logo2} alt="Logo" />
-        ) : locationUrl.pathname === "/privacy" ? (
-          <img src={Logo2} alt="Logo" />
-        ) : (
-          <img src={Logo} alt="Logo" />
-        )}
+        {locationUrl.pathname === "/terms" ? <img src={Logo2} alt="Logo" /> : locationUrl.pathname === "/privacy" ? <img src={Logo2} alt="Logo" /> : <img src={Logo} alt="Logo" />}
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
@@ -209,47 +203,36 @@ const Header = ({ color }) => {
           About
         </NavLink>
         {propertyData && (
-          <div
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            className="dropdown"
-          >
+          <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="dropdown">
             <NavLink to="#">
               Properties <i className="fas fa-caret-down" />
             </NavLink>
             {dropdown && (
               <div className="dropdown-menu">
                 {propertyData.map((item, key) => {
-                  return (
-                    <NavLink
-                      to="/property"
-                      onClick={() => {
-                        window.localStorage.setItem(
-                          "Properties",
-                          JSON.stringify(item)
-                        );
-                        if (
-                          propertyData.length !== 1 &&
-                          locationUrl.pathname === "/property"
-                        ) {
-                          window.location.reload();
-                        }
-                      }}
-                      key={key}
-                    >
-                      {item.first.propertyName}
-                    </NavLink>
-                  );
+                  if (item.first.propertyName === "Helen's Nest") {
+                    return <NavLink to="/properties">Helen's Nest</NavLink>;
+                  } else {
+                    return (
+                      <NavLink
+                        to="/property"
+                        onClick={() => {
+                          window.localStorage.setItem("Properties", JSON.stringify(item));
+                          if (propertyData.length !== 1) {
+                            window.location.reload();
+                          }
+                        }}
+                        key={key}>
+                        {item.first.propertyName}
+                      </NavLink>
+                    );
+                  }
                 })}
               </div>
             )}
           </div>
         )}
-        <NavLink
-          to="/contact"
-          className="nav-links-mobile"
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/contact" className="nav-links-mobile" onClick={closeMobileMenu}>
           <Button padding="20px 65px" bg="#bc9144">
             Contact
           </Button>
