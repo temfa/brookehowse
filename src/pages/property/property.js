@@ -46,7 +46,6 @@ const Property = () => {
       }
     });
   }, []);
-  console.log(properties);
 
   const galleryDetails = [
     properties.first.image,

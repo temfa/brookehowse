@@ -40,7 +40,11 @@ const Header = ({ color }) => {
       transform: scale(1.2);
     }
 
-    .header-nav .active {
+    .header-nav > .active {
+      font-weight: 900;
+    }
+
+    .nav-active {
       font-weight: 900;
     }
 
@@ -159,6 +163,7 @@ const Header = ({ color }) => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const [propertyData, setPropertyData] = useState("");
+  const [newProperty, setNewProperty] = useState("");
   const getPropertyDetail = () => {
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
@@ -186,6 +191,11 @@ const Header = ({ color }) => {
   useEffect(() => {
     getPropertyDetail();
   }, []);
+  const property = localStorage.getItem("Properties");
+  useEffect(() => {
+    setNewProperty(JSON.parse(property));
+  }, [property]);
+  console.log(newProperty?.first?.propertyName);
   const locationUrl = useLocation();
   return (
     <HeaderStyle color={color}>
@@ -210,8 +220,13 @@ const Header = ({ color }) => {
             {dropdown && (
               <div className="dropdown-menu">
                 {propertyData.map((item, key) => {
+                  console.log(item.first.propertyName);
                   if (item.first.propertyName === "Helen's Nest") {
-                    return <NavLink to="/properties">Helen's Nest</NavLink>;
+                    return (
+                      <NavLink to="/properties" key={key}>
+                        Helen's Nest
+                      </NavLink>
+                    );
                   } else {
                     return (
                       <NavLink
@@ -222,6 +237,7 @@ const Header = ({ color }) => {
                             window.location.reload();
                           }
                         }}
+                        className={newProperty.first.propertyName === item.first.propertyName ? "nav-active" : null}
                         key={key}>
                         {item.first.propertyName}
                       </NavLink>
