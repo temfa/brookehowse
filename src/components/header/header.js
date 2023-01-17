@@ -195,7 +195,6 @@ const Header = ({ color }) => {
   useEffect(() => {
     setNewProperty(JSON.parse(property));
   }, [property]);
-  console.log(newProperty?.first?.propertyName);
   const locationUrl = useLocation();
   return (
     <HeaderStyle color={color}>
@@ -220,7 +219,6 @@ const Header = ({ color }) => {
             {dropdown && (
               <div className="dropdown-menu">
                 {propertyData.map((item, key) => {
-                  console.log(item.first.propertyName);
                   if (item.first.propertyName === "Helen's Nest") {
                     return (
                       <NavLink to="/properties" key={key}>
@@ -237,7 +235,7 @@ const Header = ({ color }) => {
                             window.location.reload();
                           }
                         }}
-                        className={newProperty.first.propertyName === item.first.propertyName ? "nav-active" : null}
+                        className="nav-active"
                         key={key}>
                         {item.first.propertyName}
                       </NavLink>
