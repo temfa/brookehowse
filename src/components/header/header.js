@@ -218,7 +218,7 @@ const Header = ({ color }) => {
                         to="/property"
                         onClick={() => {
                           window.localStorage.setItem("Properties", JSON.stringify(item));
-                          if (propertyData.length !== 1) {
+                          if (propertyData.length !== 1 && locationUrl.pathname === "/property") {
                             window.location.reload();
                           }
                         }}
